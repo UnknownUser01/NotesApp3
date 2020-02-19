@@ -1,0 +1,20 @@
+PODS:
+  - DZNEmptyDataSet (1.8.1)
+  - UIEmptyState (4.0.1)
+
+DEPENDENCIES:
+  - DZNEmptyDataSet
+  - UIEmptyState
+
+SPEC REPOS:
+  trunk:
+    - DZNEmptyDataSet
+    - UIEmptyState
+
+SPEC CHECKSUMS:
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  UIEmptyState: 767376694d9402452fb3c0a5a5283176c6a53c92
+
+PODFILE CHECKSUM: 61d61e3ccdf44674df6c7a52a4e6284ff262a183
+
+COCOAPODS: 1.8.4

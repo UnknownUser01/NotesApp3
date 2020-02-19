@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pOl-8o-sSy">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Writing Board View Controller-->
+        <scene sceneID="r43-P0-yWk">
+            <objects>
+                <viewController storyboardIdentifier="WritingBoardViewController" id="pOl-8o-sSy" customClass="WritingBoardViewController" customModule="NotesApp3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9KV-C7-Kde">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wpa-tI-uQ2">
+                                <rect key="frame" x="20" y="155" width="374" height="707"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMT-7o-YiO">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Take a Note!" id="eXX-nI-ZNZ">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="QvG-z1-b4T">
+                                            <connections>
+                                                <action selector="cancelButton:" destination="pOl-8o-sSy" id="SGd-yp-fKf"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="rrb-8x-Rbg">
+                                            <connections>
+                                                <action selector="doneButton:" destination="pOl-8o-sSy" id="cgU-il-YWv"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lan-Yk-aw9">
+                                <rect key="frame" x="20" y="105" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lan-Yk-aw9" firstAttribute="leading" secondItem="Fgr-jt-jco" secondAttribute="leading" constant="20" id="78s-MD-xZA"/>
+                            <constraint firstItem="wpa-tI-uQ2" firstAttribute="leading" secondItem="Fgr-jt-jco" secondAttribute="leading" constant="20" id="AD7-bV-0uA"/>
+                            <constraint firstItem="wpa-tI-uQ2" firstAttribute="bottom" secondItem="Fgr-jt-jco" secondAttribute="bottom" id="IyD-5j-Ese"/>
+                            <constraint firstItem="Fgr-jt-jco" firstAttribute="trailing" secondItem="lan-Yk-aw9" secondAttribute="trailing" constant="20" id="Rf7-SJ-E1e"/>
+                            <constraint firstItem="lMT-7o-YiO" firstAttribute="centerX" secondItem="lan-Yk-aw9" secondAttribute="centerX" id="TsD-B5-OWC"/>
+                            <constraint firstItem="wpa-tI-uQ2" firstAttribute="top" secondItem="lan-Yk-aw9" secondAttribute="bottom" constant="16" id="YUs-Mk-tyN"/>
+                            <constraint firstItem="lMT-7o-YiO" firstAttribute="top" secondItem="Fgr-jt-jco" secondAttribute="top" id="bRl-08-sn8"/>
+                            <constraint firstItem="lMT-7o-YiO" firstAttribute="leading" secondItem="9KV-C7-Kde" secondAttribute="leading" id="dXX-Ke-WIW"/>
+                            <constraint firstItem="lan-Yk-aw9" firstAttribute="top" secondItem="lMT-7o-YiO" secondAttribute="bottom" constant="17" id="iaC-Bi-S9I"/>
+                            <constraint firstItem="Fgr-jt-jco" firstAttribute="trailing" secondItem="wpa-tI-uQ2" secondAttribute="trailing" constant="20" id="j2n-vT-vL9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fgr-jt-jco"/>
+                    </view>
+                    <connections>
+                        <outlet property="doneButton" destination="rrb-8x-Rbg" id="nZr-2W-cRh"/>
+                        <outlet property="navigationBar" destination="lMT-7o-YiO" id="yuW-Bg-hah"/>
+                        <outlet property="notesTextView" destination="wpa-tI-uQ2" id="ysW-Nf-YR6"/>
+                        <outlet property="titleTextField" destination="lan-Yk-aw9" id="kxf-eB-FEL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jkf-Ns-zE2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="79.710144927536234" y="113.83928571428571"/>
+        </scene>
+    </scenes>
+</document>

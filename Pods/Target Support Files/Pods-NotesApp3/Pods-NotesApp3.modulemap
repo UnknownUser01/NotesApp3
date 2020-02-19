@@ -1,0 +1,6 @@
+framework module Pods_NotesApp3 {
+  umbrella header "Pods-NotesApp3-umbrella.h"
+
+  export *
+  module * { export * }
+}

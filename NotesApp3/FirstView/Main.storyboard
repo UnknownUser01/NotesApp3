@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N0w-tz-uFn">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="WG4-yy-0X8">
+            <objects>
+                <viewController id="N0w-tz-uFn" customClass="ViewController" customModule="NotesApp3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ESS-a1-0VO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D63-08-9J2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Notes" id="SGx-Gb-SnP">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Q2u-31-tLD">
+                                            <connections>
+                                                <action selector="addNotesButton:" destination="N0w-tz-uFn" id="qdA-Lr-2b3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l3s-B9-oEw">
+                                <rect key="frame" x="0.0" y="88" width="414" height="788"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="OgZ-QW-Ihw">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OgZ-QW-Ihw" id="62I-yt-6VQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="D63-08-9J2" firstAttribute="top" secondItem="NRV-2C-28V" secondAttribute="top" id="Ak0-Eu-ft0"/>
+                            <constraint firstItem="l3s-B9-oEw" firstAttribute="trailing" secondItem="NRV-2C-28V" secondAttribute="trailing" id="KRF-YF-62t"/>
+                            <constraint firstItem="D63-08-9J2" firstAttribute="leading" secondItem="NRV-2C-28V" secondAttribute="leading" id="RcN-f8-cLq"/>
+                            <constraint firstItem="l3s-B9-oEw" firstAttribute="top" secondItem="D63-08-9J2" secondAttribute="bottom" symbolic="YES" id="dTp-s2-LOH"/>
+                            <constraint firstItem="l3s-B9-oEw" firstAttribute="leading" secondItem="NRV-2C-28V" secondAttribute="leading" id="deJ-kf-QuE"/>
+                            <constraint firstAttribute="bottom" secondItem="l3s-B9-oEw" secondAttribute="bottom" constant="20" symbolic="YES" id="lH7-D8-mBy"/>
+                            <constraint firstItem="D63-08-9J2" firstAttribute="trailing" secondItem="NRV-2C-28V" secondAttribute="trailing" id="nzF-Ap-jKP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NRV-2C-28V"/>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="D63-08-9J2" id="sQw-8U-Yb7"/>
+                        <outlet property="notesTableView" destination="l3s-B9-oEw" id="PZd-iY-rml"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fie-41-dXs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66.666666666666671" y="113.83928571428571"/>
+        </scene>
+    </scenes>
+</document>
