@@ -26,15 +26,8 @@ class LoginPageViewController: UIViewController {
     @IBAction func loginButton(_ sender: Any) {
         validateField(textField: usernameTextField, errorLabel: usernameErrorLabel, rightString: Strings.admin, errorMessage: Strings.invalidUsername)
         validateField(textField: passwordTextField, errorLabel: passwordErrorLabel, rightString: Strings.root123, errorMessage: Strings.invalidPassword)
-        if (canProceed() == true) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateInitialViewController()
-            if let newViewController = viewController as? MainViewController {
-                newViewController.modalPresentationStyle = .fullScreen
-                usernameTextField.text = ""
-                passwordTextField.text = ""
-                self.present(newViewController, animated: true, completion: nil)
-            }
+        if canProceed() == true {
+            goToNextView()
         }
     }
     
@@ -48,7 +41,7 @@ class LoginPageViewController: UIViewController {
 
 extension LoginPageViewController {
     
-    func validateField(textField: UITextField, errorLabel: UILabel, rightString: String ,errorMessage: String) {
+    func validateField(textField: UITextField, errorLabel: UILabel, rightString: String, errorMessage: String) {
         if let fieldData = textField.text {
             if fieldData != rightString {
                 showError(textField: textField, errorLabel: errorLabel, errorMessage: errorMessage)
@@ -79,13 +72,21 @@ extension LoginPageViewController {
     }
     
     func canProceed() -> Bool {
-        for label in listOfErrorLabels {
-            if label.isHidden == false {
-                return false
-            }
+        for label in listOfErrorLabels where label.isHidden == false {
+            return false
         }
         return true
     }
+    
+    func goToNextView() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController()
+        if let newViewController = viewController as? MainViewController {
+            newViewController.modalPresentationStyle = .fullScreen
+            usernameTextField.text = ""
+            passwordTextField.text = ""
+            self.present(newViewController, animated: true, completion: nil)
+        }
+    }
 
 }
-
