@@ -16,7 +16,7 @@ struct NotesData {
 }
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
-
+    
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var notesTableView: UITableView!
     var arrayOfTitle: [String] = []
@@ -35,7 +35,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     var delegate: LogOutDelegate?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-           return .lightContent
+        return .lightContent
     }
     
     override func viewDidLoad() {
@@ -46,35 +46,35 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         setContextVariable()
         readData()
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         restore()
         return arrayOfNotesData.count
     }
-
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             self.deleteIndex = indexPath.row
             let alert = UIAlertController(title: Strings.alert, message: Strings.areYouSure, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: Strings.delete, style: .default, handler: { _ in
                 self.titles = self.arrayOfNotesData[indexPath.row].titleData
-                    self.note = self.arrayOfNotesData[indexPath.row].notesData
-                    self.deleteData(title: self.titles, notes: self.note)
-                    self.arrayOfNotesData.remove(at: indexPath.row)
-                    tableView.deleteRows(at: [indexPath], with: .fade)
-                    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-                    AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) { }
+                self.note = self.arrayOfNotesData[indexPath.row].notesData
+                self.deleteData(title: self.titles, notes: self.note)
+                self.arrayOfNotesData.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) { }
             }))
             alert.addAction(UIAlertAction(title: Strings.cancel, style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         if let cell = Bundle.main.loadNibNamed(Strings.tableViewCell, owner: self, options: nil)?.first as? TableViewCell {
@@ -84,11 +84,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dataInSelectedCell = arrayOfNotesData[indexPath.row]
         indexPosition = indexPath.row
@@ -97,7 +97,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableView.deselectRow(at: indexPath as IndexPath, animated: true)
         }
     }
-
+    
     @IBAction func addNotesButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: Strings.writingBoard, bundle: nil)
         let viewController = storyboard.instantiateInitialViewController()
@@ -124,21 +124,23 @@ extension MainViewController {
         navigationBar.tintColor = .white
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
-
+    
     func setStatusBarStyle() {
         if #available(iOS 13.0, *) {
             let windowKey = UIApplication.shared.connectedScenes
-            .filter({ $0.activationState == .foregroundActive })
-            .map({ $0 as? UIWindowScene })
-            .compactMap({ $0 })
-            .first?.windows
-            .filter({ $0.isKeyWindow }).first
-            let statusBar = UIView(frame: ((windowKey?.windowScene?.statusBarManager?.statusBarFrame))!)
-            statusBar.backgroundColor = UIColor(red: 43/255.0, green: 79/255.0, blue: 133/255.0, alpha: 1.0)
-            view.addSubview(statusBar)
+                .filter({ $0.activationState == .foregroundActive })
+                .map({ $0 as? UIWindowScene })
+                .compactMap({ $0 })
+                .first?.windows
+                .filter({ $0.isKeyWindow }).first
+            if let frame = windowKey?.windowScene?.statusBarManager?.statusBarFrame {
+                let statusBar = UIView(frame: frame)
+                statusBar.backgroundColor = UIColor(red: 43/255.0, green: 79/255.0, blue: 133/255.0, alpha: 1.0)
+                view.addSubview(statusBar)
+            }
         }
     }
-
+    
     func setDefaultTableSettings() {
         notesTableView.separatorStyle = .none
         notesTableView.delegate = self
@@ -148,7 +150,7 @@ extension MainViewController {
         notesTableView.emptyDataSetDelegate = self
         notesTableView.tableFooterView = UIView()
     }
-
+    
     func setContextVariable() {
         if let contextVariable = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             context = contextVariable
@@ -172,22 +174,22 @@ extension MainViewController: DoneWritingDelegate {
     func appendToArray(titleText: String?, notesText: String?) {
         arrayOfNotesData.append(NotesData(titleData: titleText, notesData: notesText))
     }
-
+    
     func deselectTable() {
         notesTableView.reloadData()
     }
-
+    
     func doneWriting(title: String?, notes: String?) {
         canAppendTheFields(title: title, notes: notes)
     }
-
+    
     func canAppendTheFields(title: String?, notes: String?) {
         if !checkEmptyFields(title: title, notes: notes) {
             appendTheFields(title: title, notes: notes)
         }
         notesTableView.reloadData()
     }
-
+    
     func appendTheFields(title: String?, notes: String?) {
         if let index = indexPosition {
             updateData(title: title, notes: notes)
@@ -198,14 +200,14 @@ extension MainViewController: DoneWritingDelegate {
             appendToArray(titleText: title, notesText: notes)
         }
     }
-
+    
     func checkEmptyFields(title: String?, notes: String?) -> Bool {
         if title == "", notes == "" {
-                return true
+            return true
         }
         return false
     }
-
+    
     func restore() {
         notesTableView.backgroundView = nil
         notesTableView.separatorStyle = .singleLine
@@ -224,7 +226,7 @@ extension MainViewController {
             print(error.localizedDescription)
         }
     }
-
+    
     func readData() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: Strings.entityName)
         do {
@@ -239,7 +241,7 @@ extension MainViewController {
             print(error.localizedDescription)
         }
     }
-
+    
     func updateData(title: String?, notes: String?) {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: Strings.entityName)
         do {
@@ -253,7 +255,7 @@ extension MainViewController {
             print(error)
         }
     }
-
+    
     func checkAndUpdateData(fetch: [NSManagedObject], title: String?, notes: String?) {
         for index in fetch.indices {
             if (fetch[index].value(forKey: Strings.attributeTitle) as? String) == title, (fetch[index].value(forKey: Strings.attributeNotes) as? String) == notes {
@@ -264,7 +266,7 @@ extension MainViewController {
             }
         }
     }
-
+    
     func deleteData(title: String?, notes: String?) {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: Strings.entityName)
         do {
@@ -293,13 +295,13 @@ extension MainViewController {
         let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
         return NSAttributedString(string: str, attributes: attrs)
     }
-
+    
     func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let str = Strings.addANewNote
         let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
         return NSAttributedString(string: str, attributes: attrs)
     }
-
+    
     func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
         return UIImage(named: Strings.noteBooks)
     }

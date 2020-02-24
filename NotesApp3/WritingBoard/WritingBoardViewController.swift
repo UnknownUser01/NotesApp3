@@ -15,7 +15,7 @@ class WritingBoardViewController: UIViewController {
     var titleValue: String?
     var notesValue: String?
     var delegate: DoneWritingDelegate?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStatusBarStyle()
@@ -92,11 +92,11 @@ extension WritingBoardViewController {
     func setStatusBarStyle() {
         if #available(iOS 13.0, *) {
             let windowKey = UIApplication.shared.connectedScenes
-            .filter({ $0.activationState == .foregroundActive })
-            .map({ $0 as? UIWindowScene })
-            .compactMap({ $0 })
-            .first?.windows
-            .filter({ $0.isKeyWindow }).first
+                .filter({ $0.activationState == .foregroundActive })
+                .map({ $0 as? UIWindowScene })
+                .compactMap({ $0 })
+                .first?.windows
+                .filter({ $0.isKeyWindow }).first
             let statusBar = UIView(frame: ((windowKey?.windowScene?.statusBarManager?.statusBarFrame))!)
             statusBar.backgroundColor = UIColor(red: 43/255.0, green: 79/255.0, blue: 133/255.0, alpha: 1.0)
             view.addSubview(statusBar)

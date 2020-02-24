@@ -22,7 +22,7 @@ class LoginPageViewController: UIViewController {
         listOfErrorLabels = [usernameErrorLabel, passwordErrorLabel]
         // Do any additional setup after loading the view.
     }
-
+    
     @IBAction func loginButton(_ sender: Any) {
         validateField(textField: usernameTextField, errorLabel: usernameErrorLabel, rightString: Strings.admin, errorMessage: Strings.invalidUsername)
         validateField(textField: passwordTextField, errorLabel: passwordErrorLabel, rightString: Strings.root123, errorMessage: Strings.invalidPassword)
@@ -88,5 +88,4 @@ extension LoginPageViewController {
             self.present(newViewController, animated: true, completion: nil)
         }
     }
-
 }
