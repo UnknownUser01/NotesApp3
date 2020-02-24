@@ -18,24 +18,8 @@ class WritingBoardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.barTintColor = UIColor(red: 43/255.0, green: 79/255.0, blue: 133/255.0, alpha: 1.0)
-        navigationBar.isTranslucent = false
-        // status bar text => white
-        navigationBar.barStyle = .black
-        // nav bar elements color => white
-        navigationBar.tintColor = .white
-        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        if #available(iOS 13.0, *) {
-            let windowKey = UIApplication.shared.connectedScenes
-            .filter({ $0.activationState == .foregroundActive })
-            .map({ $0 as? UIWindowScene })
-            .compactMap({ $0 })
-            .first?.windows
-            .filter({ $0.isKeyWindow }).first
-            let statusBar = UIView(frame: ((windowKey?.windowScene?.statusBarManager?.statusBarFrame))!)
-            statusBar.backgroundColor = UIColor(red: 43/255.0, green: 79/255.0, blue: 133/255.0, alpha: 1.0)
-            view.addSubview(statusBar)
-        }
+        setStatusBarStyle()
+        setNavigationBarStyle()
         notesTextView.layer.borderWidth = 1
         showNotes(titleString: titleValue, notesString: notesValue)
     }
@@ -96,5 +80,29 @@ extension WritingBoardViewController {
         self.present(alert, animated: true, completion: nil)
         titleTextField.text = ""
         notesTextView.text = ""
+    }
+    
+    func setStatusBarStyle() {
+        if #available(iOS 13.0, *) {
+            let windowKey = UIApplication.shared.connectedScenes
+            .filter({ $0.activationState == .foregroundActive })
+            .map({ $0 as? UIWindowScene })
+            .compactMap({ $0 })
+            .first?.windows
+            .filter({ $0.isKeyWindow }).first
+            let statusBar = UIView(frame: ((windowKey?.windowScene?.statusBarManager?.statusBarFrame))!)
+            statusBar.backgroundColor = UIColor(red: 43/255.0, green: 79/255.0, blue: 133/255.0, alpha: 1.0)
+            view.addSubview(statusBar)
+        }
+    }
+    
+    func setNavigationBarStyle() {
+        navigationBar.barTintColor = UIColor(red: 43/255.0, green: 79/255.0, blue: 133/255.0, alpha: 1.0)
+        navigationBar.isTranslucent = false
+        // status bar text => white
+        navigationBar.barStyle = .black
+        // nav bar elements color => white
+        navigationBar.tintColor = .white
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
 }
