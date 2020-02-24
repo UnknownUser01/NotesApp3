@@ -33,4 +33,5 @@ struct Strings {
     static let root123 = NSLocalizedString("root123", comment: "")
     static let invalidUsername = NSLocalizedString("Invalid Username", comment: "")
     static let invalidPassword = NSLocalizedString("Invalid Password", comment: "")
+    static let main = NSLocalizedString("Main", comment: "")
 }

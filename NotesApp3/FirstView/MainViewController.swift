@@ -37,6 +37,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     override var preferredStatusBarStyle: UIStatusBarStyle {
            return .lightContent
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarStyle()
@@ -67,6 +68,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                     self.arrayOfNotesData.remove(at: indexPath.row)
                     tableView.deleteRows(at: [indexPath], with: .fade)
                     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                    AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) { }
             }))
             alert.addAction(UIAlertAction(title: Strings.cancel, style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -90,15 +92,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dataInSelectedCell = arrayOfNotesData[indexPath.row]
         indexPosition = indexPath.row
-        let storyboard = UIStoryboard(name: Strings.writingBoard, bundle: nil)
-        let viewController = storyboard.instantiateInitialViewController()
-        if let newViewController = viewController as? WritingBoardViewController {
-            newViewController.titleValue = dataInSelectedCell.titleData
-            newViewController.notesValue = dataInSelectedCell.notesData
-            newViewController.delegate = self
-            newViewController.modalPresentationStyle = .fullScreen
-            self.present(newViewController, animated: true, completion: nil)
-        }
+        goToNextView()
         func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             tableView.deselectRow(at: indexPath as IndexPath, animated: true)
         }
@@ -163,6 +157,18 @@ extension MainViewController {
 }
 
 extension MainViewController: DoneWritingDelegate {
+    func goToNextView() {
+        let storyboard = UIStoryboard(name: Strings.writingBoard, bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController()
+        if let newViewController = viewController as? WritingBoardViewController {
+            newViewController.titleValue = dataInSelectedCell.titleData
+            newViewController.notesValue = dataInSelectedCell.notesData
+            newViewController.delegate = self
+            newViewController.modalPresentationStyle = .fullScreen
+            self.present(newViewController, animated: true, completion: nil)
+        }
+    }
+    
     func appendToArray(titleText: String?, notesText: String?) {
         arrayOfNotesData.append(NotesData(titleData: titleText, notesData: notesText))
     }

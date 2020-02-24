@@ -23,12 +23,14 @@ class WritingBoardViewController: UIViewController {
         notesTextView.layer.borderWidth = 1
         showNotes(titleString: titleValue, notesString: notesValue)
     }
+    
     @IBAction func cancelButton(_ sender: Any) {
         titleTextField.text = ""
         notesTextView.text = ""
         delegate?.deselectTable()
         self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func doneButton(_ sender: Any) {
         storeData()
     }
@@ -44,6 +46,7 @@ extension WritingBoardViewController {
         } else { notesValue = "" }
         checkEmptyFields()
     }
+    
     func checkEmptyFields() {
         if titleValue == "", notesValue == "" {
             showAlert(title: Strings.alert, message: Strings.enterTitleOrNotes)
@@ -53,11 +56,13 @@ extension WritingBoardViewController {
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
     func checkForTitle() {
         if titleValue == "" {
             titleValue = Strings.noTitle
         }
     }
+    
     func showNotes(titleString: String?, notesString: String?) {
         if let title = titleString {
             titleTextField.text = title
@@ -66,6 +71,7 @@ extension WritingBoardViewController {
             notesTextView.text = notes
         }
     }
+    
     func checkWhiteSpaces(checkString: String) -> Bool {
         for chars in checkString {
             if chars != " " {
@@ -74,6 +80,7 @@ extension WritingBoardViewController {
         }
         return true
     }
+    
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: Strings.okay, style: .cancel, handler: nil))

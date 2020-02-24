@@ -149,8 +149,8 @@
 		F83880272401522F00077F9E /* LoginPage */ = {
 			isa = PBXGroup;
 			children = (
-				F8388023240151F300077F9E /* LoginPage.storyboard */,
 				F84C199C2403A35F00F90AFD /* LoginPageViewController.swift */,
+				F8388023240151F300077F9E /* LoginPage.storyboard */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";

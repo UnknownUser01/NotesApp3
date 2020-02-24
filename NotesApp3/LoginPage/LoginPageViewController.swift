@@ -79,7 +79,7 @@ extension LoginPageViewController {
     }
     
     func goToNextView() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: Strings.main, bundle: nil)
         let viewController = storyboard.instantiateInitialViewController()
         if let newViewController = viewController as? MainViewController {
             newViewController.modalPresentationStyle = .fullScreen
