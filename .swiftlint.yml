@@ -1,0 +1,40 @@
+excluded:
+  - Carthage
+  - Pods
+opt_in_rules:
+  - force_unwrapping
+  - empty_count
+  - explicit_init
+  - closure_spacing
+  - overridden_super_call
+  - redundant_nil_coalescing
+  - nimble_operator
+  - attributes
+  - operator_usage_whitespace
+  - closure_end_indentation
+  - first_where
+  - object_literal
+  - number_separator
+  - prohibited_super_call
+  - fatal_error_message
+disabled_rules:
+  - type_name
+  - trailing_whitespace
+  - identifier_name
+  - class_delegate_protocol
+  - nesting
+file_length:
+  warning: 1000
+  error: 1200
+type_body_length:
+ - 200 # warning
+ - 300 # error
+identifier_name:
+  excluded:
+    - id
+line_length: 300
+number_separator:
+  minimum_length: 5
+function_parameter_count:
+  warning: 6
+  error: 9
