@@ -1,20 +1,24 @@
 PODS:
   - DZNEmptyDataSet (1.8.1)
+  - SwiftLint (0.39.1)
   - UIEmptyState (4.0.1)
 
 DEPENDENCIES:
   - DZNEmptyDataSet
+  - SwiftLint
   - UIEmptyState
 
 SPEC REPOS:
   trunk:
     - DZNEmptyDataSet
+    - SwiftLint
     - UIEmptyState
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
   UIEmptyState: 767376694d9402452fb3c0a5a5283176c6a53c92
 
-PODFILE CHECKSUM: 61d61e3ccdf44674df6c7a52a4e6284ff262a183
+PODFILE CHECKSUM: 0503c05ec72e7a38e4020aa1a261bb1b16c7cc6c
 
 COCOAPODS: 1.8.4

@@ -8,19 +8,14 @@
 
 import UIKit
 class WritingBoardViewController: UIViewController {
-
-    
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var doneButton: UIButton!
-    
-    
     var titleValue: String?
     var notesValue: String?
     var delegate: DoneWritingDelegate?
-    var index: Int? = nil
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.barTintColor = UIColor(red: 43/255.0, green: 79/255.0, blue: 133/255.0, alpha: 1.0)
@@ -29,40 +24,27 @@ class WritingBoardViewController: UIViewController {
         navigationBar.barStyle = .black
         // nav bar elements color => white
         navigationBar.tintColor = .white
-        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         if #available(iOS 13.0, *) {
-            let app = UIApplication.shared
-            let statusBarHeight: CGFloat = app.statusBarFrame.size.height
-            
-            let statusbarView = UIView()
-            statusbarView.backgroundColor = UIColor(red: 43/255.0, green: 79/255.0, blue: 133/255.0, alpha: 1.0)
-            view.addSubview(statusbarView)
-          
-            statusbarView.translatesAutoresizingMaskIntoConstraints = false
-            statusbarView.heightAnchor
-                .constraint(equalToConstant: statusBarHeight).isActive = true
-            statusbarView.widthAnchor
-                .constraint(equalTo: view.widthAnchor, multiplier: 1.0).isActive = true
-            statusbarView.topAnchor
-                .constraint(equalTo: view.topAnchor).isActive = true
-            statusbarView.centerXAnchor
-                .constraint(equalTo: view.centerXAnchor).isActive = true
-          
-        } else {
-            let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
-            statusBar?.backgroundColor = UIColor.red
+            let windowKey = UIApplication.shared.connectedScenes
+            .filter({ $0.activationState == .foregroundActive })
+            .map({ $0 as? UIWindowScene })
+            .compactMap({ $0 })
+            .first?.windows
+            .filter({ $0.isKeyWindow }).first
+            let statusBar = UIView(frame: ((windowKey?.windowScene?.statusBarManager?.statusBarFrame))!)
+            statusBar.backgroundColor = UIColor(red: 43/255.0, green: 79/255.0, blue: 133/255.0, alpha: 1.0)
+            view.addSubview(statusBar)
         }
         notesTextView.layer.borderWidth = 1
         showNotes(titleString: titleValue, notesString: notesValue)
     }
-    
-    @IBAction func cancelButton(_ sender: Any){
+    @IBAction func cancelButton(_ sender: Any) {
         titleTextField.text = ""
         notesTextView.text = ""
         delegate?.deselectTable()
         self.dismiss(animated: true, completion: nil)
     }
-    
     @IBAction func doneButton(_ sender: Any) {
         storeData()
     }
@@ -70,32 +52,28 @@ class WritingBoardViewController: UIViewController {
 
 extension WritingBoardViewController {
     func storeData() {
-        if let text = titleTextField.text, !checkWhiteSpaces(checkString: text)  {
+        if let text = titleTextField.text, !checkWhiteSpaces(checkString: text) {
             titleValue = text
         } else { titleValue = "" }
-        
         if let text = notesTextView.text, !checkWhiteSpaces(checkString: text) {
             notesValue = text
         } else { notesValue = "" }
         checkEmptyFields()
     }
-    
     func checkEmptyFields() {
         if titleValue == "", notesValue == "" {
-                showAlert(title: "Alert!", message: "Enter Title or Notes")
+            showAlert(title: Strings.alert, message: Strings.enterTitleOrNotes)
         } else {
             checkForTitle()
             delegate?.doneWriting(title: titleValue, notes: notesValue)
             self.dismiss(animated: true, completion: nil)
         }
     }
-    
     func checkForTitle() {
-        if (titleValue == "") {
-            titleValue = "No Title"
+        if titleValue == "" {
+            titleValue = Strings.noTitle
         }
     }
-    
     func showNotes(titleString: String?, notesString: String?) {
         if let title = titleString {
             titleTextField.text = title
@@ -104,22 +82,17 @@ extension WritingBoardViewController {
             notesTextView.text = notes
         }
     }
-    
     func checkWhiteSpaces(checkString: String) -> Bool {
         for chars in checkString {
             if chars != " " {
                 return false
-            }
-            else {
-                showAlert(title: "Alert!", message: "Invalid Entry.")
-            }
+            } else { showAlert(title: Strings.alert, message: Strings.invalidEntry) }
         }
         return true
     }
-    
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: Strings.okay, style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
         titleTextField.text = ""
         notesTextView.text = ""

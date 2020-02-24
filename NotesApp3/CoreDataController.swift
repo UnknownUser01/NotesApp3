@@ -10,20 +10,7 @@ import Foundation
 import Combine
 import CoreData
 
-
-
 class CoreDataController {
-    
-    
-    
-    init(arrayOfNotes: notesData) {
-        
+    init(arrayOfNotes: NotesData) {
     }
-    
-    
-    
-    
-    
-    
-    
 }

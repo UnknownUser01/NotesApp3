@@ -3,4 +3,6 @@ target 'NotesApp3' do
 	
   pod 'UIEmptyState'
   pod 'DZNEmptyDataSet'
+  pod 'SwiftLint'
+
 end

@@ -10,7 +10,7 @@
 		E75E7AC09FEE49EED9E20227 /* Pods_NotesApp3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C9630598B577050560AB1E /* Pods_NotesApp3.framework */; };
 		F8371B3223E9C66900A1FE37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8371B3123E9C66900A1FE37 /* AppDelegate.swift */; };
 		F8371B3423E9C66900A1FE37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8371B3323E9C66900A1FE37 /* SceneDelegate.swift */; };
-		F8371B3623E9C66900A1FE37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8371B3523E9C66900A1FE37 /* ViewController.swift */; };
+		F8371B3623E9C66900A1FE37 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8371B3523E9C66900A1FE37 /* MainViewController.swift */; };
 		F8371B3B23E9C67300A1FE37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8371B3A23E9C67300A1FE37 /* Assets.xcassets */; };
 		F8371B3E23E9C67300A1FE37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8371B3C23E9C67300A1FE37 /* LaunchScreen.storyboard */; };
 		F8371B4823E9C7D300A1FE37 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8371B4623E9C7D300A1FE37 /* TableViewCell.swift */; };
@@ -18,10 +18,14 @@
 		F8371B4C23E9C8B400A1FE37 /* WritingBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8371B4B23E9C8B400A1FE37 /* WritingBoard.storyboard */; };
 		F8371B4E23E9C98300A1FE37 /* WritingBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8371B4D23E9C98300A1FE37 /* WritingBoardViewController.swift */; };
 		F8371B5123E9CA7000A1FE37 /* DoneWritingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8371B5023E9CA7000A1FE37 /* DoneWritingDelegate.swift */; };
+		F83774692402118D00F61D89 /* LogOutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83774682402118D00F61D89 /* LogOutDelegate.swift */; };
+		F8388024240151F300077F9E /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8388023240151F300077F9E /* LoginPage.storyboard */; };
+		F838802B24015D5600077F9E /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F838802A24015D5600077F9E /* LoginPageViewController.swift */; };
 		F83E3FB123F5216D005524DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F83E3FB023F5216D005524DE /* Main.storyboard */; };
 		F83E3FB423F523CB005524DE /* NotesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F83E3FB223F523CB005524DE /* NotesDataModel.xcdatamodeld */; };
 		F83E3FD923F560FA005524DE /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83E3FD823F560FA005524DE /* CoreDataController.swift */; };
 		F844978C23F4049A0004C8A2 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F844978A23F4049A0004C8A2 /* UIScrollView+EmptyDataSet.m */; };
+		F896775E23FE821400DDF247 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F896775D23FE821400DDF247 /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +35,7 @@
 		F8371B2E23E9C66900A1FE37 /* NotesApp3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesApp3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8371B3123E9C66900A1FE37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8371B3323E9C66900A1FE37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F8371B3523E9C66900A1FE37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F8371B3523E9C66900A1FE37 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F8371B3A23E9C67300A1FE37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8371B3D23E9C67300A1FE37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8371B3F23E9C67300A1FE37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +44,9 @@
 		F8371B4B23E9C8B400A1FE37 /* WritingBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WritingBoard.storyboard; sourceTree = "<group>"; };
 		F8371B4D23E9C98300A1FE37 /* WritingBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingBoardViewController.swift; sourceTree = "<group>"; };
 		F8371B5023E9CA7000A1FE37 /* DoneWritingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneWritingDelegate.swift; sourceTree = "<group>"; };
+		F83774682402118D00F61D89 /* LogOutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutDelegate.swift; sourceTree = "<group>"; };
+		F8388023240151F300077F9E /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
+		F838802A24015D5600077F9E /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginPageViewController.swift; path = ../../../TheNotesApp/TheNotesApp/LoginPageViewController.swift; sourceTree = "<group>"; };
 		F83B195A23FD442100227B40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F83E3FB023F5216D005524DE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F83E3FB323F523CB005524DE /* NotesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NotesDataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -47,6 +54,7 @@
 		F844978923F404990004C8A2 /* NotesApp3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotesApp3-Bridging-Header.h"; sourceTree = "<group>"; };
 		F844978A23F4049A0004C8A2 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+EmptyDataSet.m"; path = "../../../../Downloads/DZNEmptyDataSet-master/Source/UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 		F844978B23F4049A0004C8A2 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+EmptyDataSet.h"; path = "../../../../Downloads/DZNEmptyDataSet-master/Source/UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		F896775D23FE821400DDF247 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +102,13 @@
 				F844978A23F4049A0004C8A2 /* UIScrollView+EmptyDataSet.m */,
 				F8371B3123E9C66900A1FE37 /* AppDelegate.swift */,
 				F8371B3323E9C66900A1FE37 /* SceneDelegate.swift */,
+				F83880272401522F00077F9E /* LoginPage */,
 				F8371B4F23E9C98A00A1FE37 /* WritingBoard */,
 				F8371B4523E9C68C00A1FE37 /* FirstView */,
 				F8371B4A23E9C7DE00A1FE37 /* CustomCell */,
+				F896775D23FE821400DDF247 /* Strings.swift */,
 				F83E3FD823F560FA005524DE /* CoreDataController.swift */,
+				F83774682402118D00F61D89 /* LogOutDelegate.swift */,
 				F8371B5023E9CA7000A1FE37 /* DoneWritingDelegate.swift */,
 				F8371B3A23E9C67300A1FE37 /* Assets.xcassets */,
 				F8371B3C23E9C67300A1FE37 /* LaunchScreen.storyboard */,
@@ -111,7 +122,7 @@
 		F8371B4523E9C68C00A1FE37 /* FirstView */ = {
 			isa = PBXGroup;
 			children = (
-				F8371B3523E9C66900A1FE37 /* ViewController.swift */,
+				F8371B3523E9C66900A1FE37 /* MainViewController.swift */,
 				F83E3FB023F5216D005524DE /* Main.storyboard */,
 			);
 			path = FirstView;
@@ -129,10 +140,19 @@
 		F8371B4F23E9C98A00A1FE37 /* WritingBoard */ = {
 			isa = PBXGroup;
 			children = (
-				F8371B4B23E9C8B400A1FE37 /* WritingBoard.storyboard */,
 				F8371B4D23E9C98300A1FE37 /* WritingBoardViewController.swift */,
+				F8371B4B23E9C8B400A1FE37 /* WritingBoard.storyboard */,
 			);
 			path = WritingBoard;
+			sourceTree = "<group>";
+		};
+		F83880272401522F00077F9E /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				F838802A24015D5600077F9E /* LoginPageViewController.swift */,
+				F8388023240151F300077F9E /* LoginPage.storyboard */,
+			);
+			path = LoginPage;
 			sourceTree = "<group>";
 		};
 		FC89244E31AB02236E8A8F9A /* Pods */ = {
@@ -151,6 +171,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8371B4223E9C67300A1FE37 /* Build configuration list for PBXNativeTarget "NotesApp3" */;
 			buildPhases = (
+				F896775F23FE8F0B00DDF247 /* ShellScript */,
 				77E4A8AC0513AAA558A0FF23 /* [CP] Check Pods Manifest.lock */,
 				F8371B2A23E9C66900A1FE37 /* Sources */,
 				F8371B2B23E9C66900A1FE37 /* Frameworks */,
@@ -210,6 +231,7 @@
 				F8371B4923E9C7D300A1FE37 /* TableViewCell.xib in Resources */,
 				F8371B4C23E9C8B400A1FE37 /* WritingBoard.storyboard in Resources */,
 				F8371B3B23E9C67300A1FE37 /* Assets.xcassets in Resources */,
+				F8388024240151F300077F9E /* LoginPage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +277,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NotesApp3/Pods-NotesApp3-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F896775F23FE8F0B00DDF247 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -262,8 +301,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8371B3623E9C66900A1FE37 /* ViewController.swift in Sources */,
+				F8371B3623E9C66900A1FE37 /* MainViewController.swift in Sources */,
 				F8371B4823E9C7D300A1FE37 /* TableViewCell.swift in Sources */,
+				F838802B24015D5600077F9E /* LoginPageViewController.swift in Sources */,
+				F896775E23FE821400DDF247 /* Strings.swift in Sources */,
+				F83774692402118D00F61D89 /* LogOutDelegate.swift in Sources */,
 				F8371B4E23E9C98300A1FE37 /* WritingBoardViewController.swift in Sources */,
 				F8371B5123E9CA7000A1FE37 /* DoneWritingDelegate.swift in Sources */,
 				F8371B3223E9C66900A1FE37 /* AppDelegate.swift in Sources */,
