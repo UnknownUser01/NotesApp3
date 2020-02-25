@@ -32,7 +32,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     var context: NSManagedObjectContext!
     var notes: [NSManagedObject] = []
     let statusBar = UIStatusBarManager.self
-    var delegate: LogOutDelegate?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -99,14 +98,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func addNotesButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: Strings.writingBoard, bundle: nil)
-        let viewController = storyboard.instantiateInitialViewController()
-        if let newViewController = viewController as? WritingBoardViewController {
-            newViewController.delegate = self
-            indexPosition = nil
-            newViewController.modalPresentationStyle = .fullScreen
-            self.present(newViewController, animated: true, completion: nil)
-        }
+        let newViewController = UIViewController.writeView
+        newViewController.delegate = self
+        indexPosition = nil
+        self.present(newViewController, animated: true, completion: nil)
     }
     
     @IBAction func logOutButton(_ sender: Any) {
@@ -116,7 +111,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 extension MainViewController {
     func setNavigationBarStyle() {
-        navigationBar.barTintColor = UIColor(red: 43/255.0, green: 79/255.0, blue: 133/255.0, alpha: 1.0)
+        navigationBar.barTintColor = UIColor.darkBlue
         navigationBar.isTranslucent = false
         // status bar text => white
         navigationBar.barStyle = .black
@@ -131,11 +126,10 @@ extension MainViewController {
                 .filter({ $0.activationState == .foregroundActive })
                 .map({ $0 as? UIWindowScene })
                 .compactMap({ $0 })
-                .first?.windows
-                .filter({ $0.isKeyWindow }).first
+                .first?.windows.first(where: { $0.isKeyWindow })
             if let frame = windowKey?.windowScene?.statusBarManager?.statusBarFrame {
                 let statusBar = UIView(frame: frame)
-                statusBar.backgroundColor = UIColor(red: 43/255.0, green: 79/255.0, blue: 133/255.0, alpha: 1.0)
+                statusBar.backgroundColor = UIColor.darkBlue
                 view.addSubview(statusBar)
             }
         }
@@ -158,28 +152,24 @@ extension MainViewController {
     }
 }
 
-extension MainViewController: DoneWritingDelegate {
+extension MainViewController: WritingBoardViewControllerDelegate {
     func goToNextView() {
-        let storyboard = UIStoryboard(name: Strings.writingBoard, bundle: nil)
-        let viewController = storyboard.instantiateInitialViewController()
-        if let newViewController = viewController as? WritingBoardViewController {
-            newViewController.titleValue = dataInSelectedCell.titleData
-            newViewController.notesValue = dataInSelectedCell.notesData
-            newViewController.delegate = self
-            newViewController.modalPresentationStyle = .fullScreen
-            self.present(newViewController, animated: true, completion: nil)
-        }
+        let newViewController = UIViewController.writeView
+        newViewController.titleValue = dataInSelectedCell.titleData
+        newViewController.notesValue = dataInSelectedCell.notesData
+        newViewController.delegate = self
+        self.present(newViewController, animated: true, completion: nil)
     }
     
     func appendToArray(titleText: String?, notesText: String?) {
         arrayOfNotesData.append(NotesData(titleData: titleText, notesData: notesText))
     }
     
-    func deselectTable() {
+    func diddDeselectTable() {
         notesTableView.reloadData()
     }
     
-    func doneWriting(title: String?, notes: String?) {
+    func didWriteNote(title: String?, notes: String?) {
         canAppendTheFields(title: title, notes: notes)
     }
     

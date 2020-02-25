@@ -14,7 +14,7 @@ class WritingBoardViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     var titleValue: String?
     var notesValue: String?
-    var delegate: DoneWritingDelegate?
+    weak var delegate: WritingBoardViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class WritingBoardViewController: UIViewController {
     @IBAction func cancelButton(_ sender: Any) {
         titleTextField.text = ""
         notesTextView.text = ""
-        delegate?.deselectTable()
+        delegate?.diddDeselectTable()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -52,7 +52,7 @@ extension WritingBoardViewController {
             showAlert(title: Strings.alert, message: Strings.enterTitleOrNotes)
         } else {
             checkForTitle()
-            delegate?.doneWriting(title: titleValue, notes: notesValue)
+            delegate?.didWriteNote(title: titleValue, notes: notesValue)
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -95,16 +95,17 @@ extension WritingBoardViewController {
                 .filter({ $0.activationState == .foregroundActive })
                 .map({ $0 as? UIWindowScene })
                 .compactMap({ $0 })
-                .first?.windows
-                .filter({ $0.isKeyWindow }).first
-            let statusBar = UIView(frame: ((windowKey?.windowScene?.statusBarManager?.statusBarFrame))!)
-            statusBar.backgroundColor = UIColor(red: 43/255.0, green: 79/255.0, blue: 133/255.0, alpha: 1.0)
-            view.addSubview(statusBar)
+                .first?.windows.first(where: { $0.isKeyWindow })
+            if let frame = windowKey?.windowScene?.statusBarManager?.statusBarFrame {
+                let statusBar = UIView(frame: frame)
+                statusBar.backgroundColor = UIColor.darkBlue
+                view.addSubview(statusBar)
+            }
         }
     }
     
     func setNavigationBarStyle() {
-        navigationBar.barTintColor = UIColor(red: 43/255.0, green: 79/255.0, blue: 133/255.0, alpha: 1.0)
+        navigationBar.barTintColor = UIColor.darkBlue
         navigationBar.isTranslucent = false
         // status bar text => white
         navigationBar.barStyle = .black
@@ -112,4 +113,9 @@ extension WritingBoardViewController {
         navigationBar.tintColor = .white
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
+}
+
+protocol WritingBoardViewControllerDelegate: class {
+    func didWriteNote(title: String?, notes: String?)
+    func diddDeselectTable()
 }

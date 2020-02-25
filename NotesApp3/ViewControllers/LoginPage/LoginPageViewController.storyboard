@@ -10,7 +10,7 @@
         <!--Login Page View Controller-->
         <scene sceneID="sQs-KK-P22">
             <objects>
-                <viewController id="Ozg-IA-3mL" customClass="LoginPageViewController" customModule="NotesApp3" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginPageViewController" id="Ozg-IA-3mL" customClass="LoginPageViewController" customModule="NotesApp3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L6t-i1-Vlv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -79,13 +79,9 @@ extension LoginPageViewController {
     }
     
     func goToNextView() {
-        let storyboard = UIStoryboard(name: Strings.main, bundle: nil)
-        let viewController = storyboard.instantiateInitialViewController()
-        if let newViewController = viewController as? MainViewController {
-            newViewController.modalPresentationStyle = .fullScreen
-            usernameTextField.text = ""
-            passwordTextField.text = ""
-            self.present(newViewController, animated: true, completion: nil)
-        }
+        let viewController = UIViewController.mainView
+        usernameTextField.text = ""
+        passwordTextField.text = ""
+        self.present(viewController, animated: true, completion: nil)
     }
 }
