@@ -20,7 +20,7 @@ extension UIViewController {
     
     static var writeView: WritingBoardViewController {
         guard let writeView = UIStoryboard.write.instantiateInitialViewController() as? WritingBoardViewController else {
-            fatalError("Main view contorller cannot be nil")
+            fatalError("WritIngBoard view contorller cannot be nil")
         }
         writeView.modalPresentationStyle = .fullScreen
         return writeView
@@ -28,7 +28,7 @@ extension UIViewController {
     
     static var loginView: LoginPageViewController {
         guard let mainView = UIStoryboard.main.instantiateInitialViewController() as? LoginPageViewController else {
-            fatalError("Main view contorller cannot be nil")
+            fatalError("Login view contorller cannot be nil")
         }
         return mainView
     }

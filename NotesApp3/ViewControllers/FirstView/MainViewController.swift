@@ -19,19 +19,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var notesTableView: UITableView!
-    var arrayOfTitle: [String] = []
-    var arrayOfNotes: [String] = []
+    var arrayOfTitle = [String]()
+    var arrayOfNotes = [String]()
     var arrayOfNotesData: [NotesData] = []
     var dataInSelectedCell = NotesData(titleData: "", notesData: "")
     let cellHEIGHT = 80
     var indexPosition: Int?
     var deleteIndex: Int?
-    var container: NSPersistentContainer!
     var titles: String?
     var note: String?
     var context: NSManagedObjectContext!
-    var notes: [NSManagedObject] = []
-    let statusBar = UIStatusBarManager.self
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
