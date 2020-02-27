@@ -30,7 +30,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     var titles: String?
     var note: String?
     var context: NSManagedObjectContext!
-    
+    //required for status bar editing
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -303,8 +303,8 @@ extension MainViewController: UITabBarDelegate {
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if mainTabBar.selectedItem?.title == "Quiz" {
-            let viewController2 = UIViewController.writeView
-            self.present(viewController2, animated: true, completion: { self.mainTabBar.selectedItem = self.mainTabBar.items?.first })
+            let viewController2 = UIViewController.startQuizView
+            self.present(viewController2, animated: false, completion: { self.mainTabBar.selectedItem = self.mainTabBar.items?.first })
         }
     }
 }

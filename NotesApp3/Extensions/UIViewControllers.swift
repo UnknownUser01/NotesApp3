@@ -33,4 +33,12 @@ extension UIViewController {
         return mainView
     }
     
+    static var startQuizView: StartQuizViewController {
+        guard let startQuizView = UIStoryboard.startQuiz.instantiateInitialViewController() as? StartQuizViewController else {
+            fatalError("StartQuiz View Cannot be nil")
+        }
+        startQuizView.modalPresentationStyle = .fullScreen
+        return startQuizView
+    }
+    
 }

@@ -25,6 +25,8 @@
 		F8438B312404F261001A801F /* UIStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8438B302404F261001A801F /* UIStoryBoard.swift */; };
 		F8438B332404F27C001A801F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8438B322404F27C001A801F /* UIColor.swift */; };
 		F844978C23F4049A0004C8A2 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F844978A23F4049A0004C8A2 /* UIScrollView+EmptyDataSet.m */; };
+		F849ED8D2407B490002D7351 /* StartQuizViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F849ED8C2407B490002D7351 /* StartQuizViewController.storyboard */; };
+		F849ED912407B783002D7351 /* StartQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849ED902407B783002D7351 /* StartQuizViewController.swift */; };
 		F84C199D2403A35F00F90AFD /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84C199C2403A35F00F90AFD /* LoginPageViewController.swift */; };
 		F896775E23FE821400DDF247 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F896775D23FE821400DDF247 /* Strings.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +57,8 @@
 		F844978923F404990004C8A2 /* NotesApp3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotesApp3-Bridging-Header.h"; sourceTree = "<group>"; };
 		F844978A23F4049A0004C8A2 /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+EmptyDataSet.m"; path = "../../../../Downloads/DZNEmptyDataSet-master/Source/UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 		F844978B23F4049A0004C8A2 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+EmptyDataSet.h"; path = "../../../../Downloads/DZNEmptyDataSet-master/Source/UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		F849ED8C2407B490002D7351 /* StartQuizViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartQuizViewController.storyboard; sourceTree = "<group>"; };
+		F849ED902407B783002D7351 /* StartQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartQuizViewController.swift; sourceTree = "<group>"; };
 		F84C199C2403A35F00F90AFD /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		F896775D23FE821400DDF247 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +169,7 @@
 		F8438B2B2404F17C001A801F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F849ED8B2407B417002D7351 /* StartQuizPage */,
 				F83880272401522F00077F9E /* LoginPage */,
 				F8371B4F23E9C98A00A1FE37 /* WritingBoard */,
 				F8371B4523E9C68C00A1FE37 /* FirstView */,
@@ -188,6 +193,15 @@
 				F8371B4A23E9C7DE00A1FE37 /* CustomCell */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		F849ED8B2407B417002D7351 /* StartQuizPage */ = {
+			isa = PBXGroup;
+			children = (
+				F849ED902407B783002D7351 /* StartQuizViewController.swift */,
+				F849ED8C2407B490002D7351 /* StartQuizViewController.storyboard */,
+			);
+			path = StartQuizPage;
 			sourceTree = "<group>";
 		};
 		FC89244E31AB02236E8A8F9A /* Pods */ = {
@@ -267,6 +281,7 @@
 				F8371B4C23E9C8B400A1FE37 /* WritingBoardViewController.storyboard in Resources */,
 				F8371B3B23E9C67300A1FE37 /* Assets.xcassets in Resources */,
 				F8388024240151F300077F9E /* LoginPageViewController.storyboard in Resources */,
+				F849ED8D2407B490002D7351 /* StartQuizViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +355,7 @@
 				F8371B4823E9C7D300A1FE37 /* TableViewCell.swift in Sources */,
 				F896775E23FE821400DDF247 /* Strings.swift in Sources */,
 				F8438B332404F27C001A801F /* UIColor.swift in Sources */,
+				F849ED912407B783002D7351 /* StartQuizViewController.swift in Sources */,
 				F8371B4E23E9C98300A1FE37 /* WritingBoardViewController.swift in Sources */,
 				F8371B3223E9C66900A1FE37 /* AppDelegate.swift in Sources */,
 				F8438B2F2404F243001A801F /* UIViewControllers.swift in Sources */,

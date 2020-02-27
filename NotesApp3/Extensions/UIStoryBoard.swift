@@ -12,6 +12,7 @@ extension UIStoryboard {
     static let mainView = "MainViewController"
     static let loginView = "LoginViewController"
     static let writingBoardView = "WritingBoardViewController"
+    static let startQuizView = "StartQuizViewController"
     
     static var main: UIStoryboard {
         return UIStoryboard(name: mainView, bundle: nil)
@@ -23,5 +24,9 @@ extension UIStoryboard {
     
     static var write: UIStoryboard {
         return UIStoryboard(name: writingBoardView, bundle: nil)
+    }
+    
+    static var startQuiz: UIStoryboard {
+        return UIStoryboard(name: startQuizView, bundle: nil)
     }
 }

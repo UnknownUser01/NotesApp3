@@ -33,7 +33,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="l3s-B9-oEw">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="728"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="80" id="OgZ-QW-Ihw">
@@ -47,8 +47,11 @@
                                 </prototypes>
                             </tableView>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkF-X6-YXI">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="816" width="414" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="HHO-Iw-iay"/>
+                                </constraints>
                                 <items>
                                     <tabBarItem title="Notes" image="square.and.pencil" catalog="system" id="ejy-qT-ayM"/>
                                     <tabBarItem title="Quiz" image="hourglass" catalog="system" id="rV2-3P-ozL"/>
@@ -57,15 +60,16 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="l3s-B9-oEw" firstAttribute="trailing" secondItem="NRV-2C-28V" secondAttribute="trailing" id="3DZ-y0-g0E"/>
+                            <constraint firstItem="l3s-B9-oEw" firstAttribute="leading" secondItem="NRV-2C-28V" secondAttribute="leading" id="4ok-wE-t1k"/>
                             <constraint firstItem="D63-08-9J2" firstAttribute="top" secondItem="NRV-2C-28V" secondAttribute="top" id="Ak0-Eu-ft0"/>
                             <constraint firstItem="bkF-X6-YXI" firstAttribute="trailing" secondItem="NRV-2C-28V" secondAttribute="trailing" id="Ayh-YD-PH8"/>
-                            <constraint firstItem="bkF-X6-YXI" firstAttribute="bottom" secondItem="NRV-2C-28V" secondAttribute="bottom" id="BYK-nV-bUy"/>
-                            <constraint firstItem="l3s-B9-oEw" firstAttribute="trailing" secondItem="NRV-2C-28V" secondAttribute="trailing" id="KRF-YF-62t"/>
-                            <constraint firstItem="bkF-X6-YXI" firstAttribute="top" secondItem="l3s-B9-oEw" secondAttribute="bottom" symbolic="YES" id="Mjt-Tk-Bqh"/>
+                            <constraint firstItem="bkF-X6-YXI" firstAttribute="top" secondItem="l3s-B9-oEw" secondAttribute="bottom" symbolic="YES" id="EHT-LN-3F7"/>
                             <constraint firstItem="D63-08-9J2" firstAttribute="leading" secondItem="NRV-2C-28V" secondAttribute="leading" id="RcN-f8-cLq"/>
-                            <constraint firstItem="l3s-B9-oEw" firstAttribute="top" secondItem="D63-08-9J2" secondAttribute="bottom" symbolic="YES" id="dTp-s2-LOH"/>
-                            <constraint firstItem="l3s-B9-oEw" firstAttribute="leading" secondItem="NRV-2C-28V" secondAttribute="leading" id="deJ-kf-QuE"/>
+                            <constraint firstAttribute="bottom" secondItem="bkF-X6-YXI" secondAttribute="bottom" symbolic="YES" id="UMx-40-haa"/>
+                            <constraint firstItem="l3s-B9-oEw" firstAttribute="top" secondItem="D63-08-9J2" secondAttribute="bottom" symbolic="YES" id="WdH-pv-N5u"/>
                             <constraint firstItem="bkF-X6-YXI" firstAttribute="leading" secondItem="NRV-2C-28V" secondAttribute="leading" id="dwa-Ky-jhq"/>
+                            <constraint firstItem="bkF-X6-YXI" firstAttribute="top" secondItem="l3s-B9-oEw" secondAttribute="bottom" symbolic="YES" id="hyQ-pV-yJL"/>
                             <constraint firstItem="D63-08-9J2" firstAttribute="trailing" secondItem="NRV-2C-28V" secondAttribute="trailing" id="nzF-Ap-jKP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NRV-2C-28V"/>

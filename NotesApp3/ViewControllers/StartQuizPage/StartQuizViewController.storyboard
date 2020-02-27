@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4nA-TW-VuG">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--StartQuizViewController-->
+        <scene sceneID="kvd-eu-ynL">
+            <objects>
+                <viewController storyboardIdentifier="StartQuizViewController" title="StartQuizViewController" id="4nA-TW-VuG" customClass="StartQuizViewController" customModule="NotesApp3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c5T-dB-GWR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZr-y7-G1t">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Quiz Time!" id="I8G-r9-7fS"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDj-7v-G7D">
+                                <rect key="frame" x="137" y="224" width="140" height="41"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <state key="normal" title="Take Quiz">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="takeQuizButton:" destination="4nA-TW-VuG" eventType="touchUpInside" id="lAd-Gr-nuf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ln-OY-HlV">
+                                <rect key="frame" x="147" y="405" width="120" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9T4-aE-KJ1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1j-l0-5WT">
+                                <rect key="frame" x="147" y="490" width="120" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6K4-l5-rcH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktF-e6-IfE">
+                                <rect key="frame" x="0.0" y="816" width="414" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="toB-Et-WUn"/>
+                                </constraints>
+                                <items>
+                                    <tabBarItem title="Notes" image="square.and.pencil" catalog="system" id="HaI-73-hql"/>
+                                    <tabBarItem title="Quiz" image="hourglass" catalog="system" id="vjU-Pu-mFi"/>
+                                </items>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="NDj-7v-G7D" firstAttribute="top" secondItem="WZr-y7-G1t" secondAttribute="bottom" constant="136" id="2kx-1s-Lnx"/>
+                            <constraint firstItem="WZr-y7-G1t" firstAttribute="leading" secondItem="0Xx-2I-YQ1" secondAttribute="leading" id="6Aq-3w-GaO"/>
+                            <constraint firstItem="NDj-7v-G7D" firstAttribute="top" secondItem="0Xx-2I-YQ1" secondAttribute="top" constant="180" id="DeM-Zg-1aq"/>
+                            <constraint firstItem="1Ln-OY-HlV" firstAttribute="top" secondItem="NDj-7v-G7D" secondAttribute="bottom" constant="140" id="NgG-yA-NPc"/>
+                            <constraint firstItem="WZr-y7-G1t" firstAttribute="top" secondItem="0Xx-2I-YQ1" secondAttribute="top" id="SBO-3K-5Sb"/>
+                            <constraint firstItem="ktF-e6-IfE" firstAttribute="trailing" secondItem="0Xx-2I-YQ1" secondAttribute="trailing" id="VAZ-yq-qlv"/>
+                            <constraint firstItem="ktF-e6-IfE" firstAttribute="leading" secondItem="0Xx-2I-YQ1" secondAttribute="leading" id="X7R-FU-qRa"/>
+                            <constraint firstItem="0Xx-2I-YQ1" firstAttribute="trailing" secondItem="NDj-7v-G7D" secondAttribute="trailing" constant="137" id="YCH-vO-ILj"/>
+                            <constraint firstItem="NDj-7v-G7D" firstAttribute="leading" secondItem="0Xx-2I-YQ1" secondAttribute="leading" constant="137" id="aNC-6c-1nq"/>
+                            <constraint firstItem="1Ln-OY-HlV" firstAttribute="leading" secondItem="0Xx-2I-YQ1" secondAttribute="leading" constant="147" id="aTV-81-OrY"/>
+                            <constraint firstItem="WZr-y7-G1t" firstAttribute="trailing" secondItem="0Xx-2I-YQ1" secondAttribute="trailing" id="bC7-D0-gaq"/>
+                            <constraint firstItem="0Xx-2I-YQ1" firstAttribute="trailing" secondItem="1Ln-OY-HlV" secondAttribute="trailing" constant="147" id="dOu-0t-U1Q"/>
+                            <constraint firstAttribute="bottom" secondItem="ktF-e6-IfE" secondAttribute="bottom" symbolic="YES" id="mmf-yb-2Xa"/>
+                            <constraint firstItem="ktF-e6-IfE" firstAttribute="top" secondItem="G1j-l0-5WT" secondAttribute="bottom" constant="286" id="tKP-wV-hJ6"/>
+                            <constraint firstItem="0Xx-2I-YQ1" firstAttribute="trailing" secondItem="G1j-l0-5WT" secondAttribute="trailing" constant="147" id="tWW-Sp-Rpk"/>
+                            <constraint firstItem="G1j-l0-5WT" firstAttribute="leading" secondItem="0Xx-2I-YQ1" secondAttribute="leading" constant="147" id="zWl-9J-5fi"/>
+                            <constraint firstItem="G1j-l0-5WT" firstAttribute="top" secondItem="1Ln-OY-HlV" secondAttribute="bottom" constant="45" id="zty-7Z-Xat"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0Xx-2I-YQ1"/>
+                    </view>
+                    <connections>
+                        <outlet property="mainTabBar" destination="ktF-e6-IfE" id="uJc-xX-JS3"/>
+                        <outlet property="navigationBar" destination="WZr-y7-G1t" id="8Dm-YD-sar"/>
+                        <outlet property="resultsHeadingLabel" destination="1Ln-OY-HlV" id="aM9-zE-Svy"/>
+                        <outlet property="resultsValueLabel" destination="G1j-l0-5WT" id="qP6-vR-UTw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EPJ-oM-jHm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.565217391304358" y="94.419642857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="hourglass" catalog="system" width="54" height="64"/>
+        <image name="square.and.pencil" catalog="system" width="64" height="58"/>
+    </resources>
+</document>
