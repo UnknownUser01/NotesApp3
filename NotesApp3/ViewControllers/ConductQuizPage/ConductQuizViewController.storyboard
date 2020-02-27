@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="khg-CC-0bf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Conduct Quiz View Controller-->
+        <scene sceneID="mzl-XN-ZBO">
+            <objects>
+                <viewController id="khg-CC-0bf" customClass="ConductQuizViewController" customModule="NotesApp3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2bG-pz-mRu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hh3-XK-taT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Quiz Time!" id="Opb-ua-JU9">
+                                        <barButtonItem key="leftBarButtonItem" title="Exit" id="v3g-yi-aVy">
+                                            <connections>
+                                                <action selector="exitButton:" destination="khg-CC-0bf" id="cdQ-47-fKM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Submit" id="mYS-mo-k43">
+                                            <connections>
+                                                <action selector="submitButton:" destination="khg-CC-0bf" id="wz7-dF-WuH"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yxU-XG-pGL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="788"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="sC0-td-iq6">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sC0-td-iq6" id="XKK-fD-ZN2">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yxU-XG-pGL" firstAttribute="trailing" secondItem="Y2H-UG-LiG" secondAttribute="trailing" id="4dd-HG-nXC"/>
+                            <constraint firstItem="hh3-XK-taT" firstAttribute="top" secondItem="Y2H-UG-LiG" secondAttribute="top" id="59e-Ew-iLJ"/>
+                            <constraint firstItem="yxU-XG-pGL" firstAttribute="top" secondItem="hh3-XK-taT" secondAttribute="bottom" symbolic="YES" id="DvG-ve-t4s"/>
+                            <constraint firstItem="hh3-XK-taT" firstAttribute="trailing" secondItem="Y2H-UG-LiG" secondAttribute="trailing" id="LTn-4A-tRG"/>
+                            <constraint firstItem="hh3-XK-taT" firstAttribute="leading" secondItem="Y2H-UG-LiG" secondAttribute="leading" id="i1D-7z-93s"/>
+                            <constraint firstItem="yxU-XG-pGL" firstAttribute="leading" secondItem="Y2H-UG-LiG" secondAttribute="leading" id="kZl-yD-TS6"/>
+                            <constraint firstAttribute="bottom" secondItem="yxU-XG-pGL" secondAttribute="bottom" constant="20" symbolic="YES" id="w6w-pD-H5E"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Y2H-UG-LiG"/>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="hh3-XK-taT" id="Ws1-tS-8Xf"/>
+                        <outlet property="quizTable" destination="yxU-XG-pGL" id="loO-GF-aLy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u7p-fM-zcM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="150.72463768115944" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+</document>

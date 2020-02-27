@@ -20,7 +20,7 @@ extension UIViewController {
     
     static var writeView: WritingBoardViewController {
         guard let writeView = UIStoryboard.write.instantiateInitialViewController() as? WritingBoardViewController else {
-            fatalError("WritIngBoard view contorller cannot be nil")
+            fatalError("WritingBoard view contorller cannot be nil")
         }
         writeView.modalPresentationStyle = .fullScreen
         return writeView
@@ -35,10 +35,18 @@ extension UIViewController {
     
     static var startQuizView: StartQuizViewController {
         guard let startQuizView = UIStoryboard.startQuiz.instantiateInitialViewController() as? StartQuizViewController else {
-            fatalError("StartQuiz View Cannot be nil")
+            fatalError("StartQuiz view controller cannot be nil")
         }
         startQuizView.modalPresentationStyle = .fullScreen
         return startQuizView
+    }
+    
+    static var conductQuizView: ConductQuizViewController {
+        guard let conductQuizView = UIStoryboard.conductQuiz.instantiateInitialViewController() as? ConductQuizViewController else {
+            fatalError("ConductQuiz view controller cannot be nil")
+        }
+        conductQuizView.modalPresentationStyle = .fullScreen
+        return conductQuizView
     }
     
 }
