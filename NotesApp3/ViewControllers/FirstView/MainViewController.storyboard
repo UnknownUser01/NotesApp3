@@ -33,7 +33,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="l3s-B9-oEw">
-                                <rect key="frame" x="0.0" y="88" width="414" height="788"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="80" id="OgZ-QW-Ihw">
@@ -46,20 +46,32 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkF-X6-YXI">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="Notes" image="square.and.pencil" catalog="system" id="ejy-qT-ayM"/>
+                                    <tabBarItem title="Quiz" image="hourglass" catalog="system" id="rV2-3P-ozL"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="D63-08-9J2" firstAttribute="top" secondItem="NRV-2C-28V" secondAttribute="top" id="Ak0-Eu-ft0"/>
+                            <constraint firstItem="bkF-X6-YXI" firstAttribute="trailing" secondItem="NRV-2C-28V" secondAttribute="trailing" id="Ayh-YD-PH8"/>
+                            <constraint firstItem="bkF-X6-YXI" firstAttribute="bottom" secondItem="NRV-2C-28V" secondAttribute="bottom" id="BYK-nV-bUy"/>
                             <constraint firstItem="l3s-B9-oEw" firstAttribute="trailing" secondItem="NRV-2C-28V" secondAttribute="trailing" id="KRF-YF-62t"/>
+                            <constraint firstItem="bkF-X6-YXI" firstAttribute="top" secondItem="l3s-B9-oEw" secondAttribute="bottom" symbolic="YES" id="Mjt-Tk-Bqh"/>
                             <constraint firstItem="D63-08-9J2" firstAttribute="leading" secondItem="NRV-2C-28V" secondAttribute="leading" id="RcN-f8-cLq"/>
                             <constraint firstItem="l3s-B9-oEw" firstAttribute="top" secondItem="D63-08-9J2" secondAttribute="bottom" symbolic="YES" id="dTp-s2-LOH"/>
                             <constraint firstItem="l3s-B9-oEw" firstAttribute="leading" secondItem="NRV-2C-28V" secondAttribute="leading" id="deJ-kf-QuE"/>
-                            <constraint firstAttribute="bottom" secondItem="l3s-B9-oEw" secondAttribute="bottom" constant="20" symbolic="YES" id="lH7-D8-mBy"/>
+                            <constraint firstItem="bkF-X6-YXI" firstAttribute="leading" secondItem="NRV-2C-28V" secondAttribute="leading" id="dwa-Ky-jhq"/>
                             <constraint firstItem="D63-08-9J2" firstAttribute="trailing" secondItem="NRV-2C-28V" secondAttribute="trailing" id="nzF-Ap-jKP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NRV-2C-28V"/>
                     </view>
                     <connections>
+                        <outlet property="mainTabBar" destination="bkF-X6-YXI" id="VYn-bB-T1y"/>
                         <outlet property="navigationBar" destination="D63-08-9J2" id="sQw-8U-Yb7"/>
                         <outlet property="notesTableView" destination="l3s-B9-oEw" id="PZd-iY-rml"/>
                     </connections>
@@ -69,4 +81,8 @@
             <point key="canvasLocation" x="66.666666666666671" y="113.83928571428571"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hourglass" catalog="system" width="54" height="64"/>
+        <image name="square.and.pencil" catalog="system" width="64" height="58"/>
+    </resources>
 </document>

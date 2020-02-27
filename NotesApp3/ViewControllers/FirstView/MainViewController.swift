@@ -17,6 +17,7 @@ struct NotesData {
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
+    @IBOutlet weak var mainTabBar: UITabBar!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var notesTableView: UITableView!
     var arrayOfTitle = [String]()
@@ -41,6 +42,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         setDefaultTableSettings()
         setContextVariable()
         readData()
+        setDefaultTabBar()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -147,6 +149,12 @@ extension MainViewController {
             context = contextVariable
         }
     }
+    
+    func setDefaultTabBar() {
+        mainTabBar.delegate = self
+        mainTabBar.selectedItem = mainTabBar.items?.first
+    }
+    
 }
 
 extension MainViewController: WritingBoardViewControllerDelegate {
@@ -276,7 +284,7 @@ extension MainViewController {
     }
 }
 
-extension MainViewController {
+extension MainViewController: UITabBarDelegate {
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let str = Strings.welcome
         let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
@@ -291,5 +299,12 @@ extension MainViewController {
     
     func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
         return UIImage(named: Strings.noteBooks)
+    }
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if mainTabBar.selectedItem?.title == "Quiz" {
+            let viewController2 = UIViewController.writeView
+            self.present(viewController2, animated: true, completion: { self.mainTabBar.selectedItem = self.mainTabBar.items?.first })
+        }
     }
 }
