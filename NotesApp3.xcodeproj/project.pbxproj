@@ -17,6 +17,7 @@
 		F8371B4923E9C7D300A1FE37 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8371B4723E9C7D300A1FE37 /* TableViewCell.xib */; };
 		F8371B4C23E9C8B400A1FE37 /* WritingBoardViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8371B4B23E9C8B400A1FE37 /* WritingBoardViewController.storyboard */; };
 		F8371B4E23E9C98300A1FE37 /* WritingBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8371B4D23E9C98300A1FE37 /* WritingBoardViewController.swift */; };
+		F8380E00240A11EC0003A82C /* QuizQuestions.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8380DFF240A11EC0003A82C /* QuizQuestions.plist */; };
 		F8388024240151F300077F9E /* LoginPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8388023240151F300077F9E /* LoginPageViewController.storyboard */; };
 		F83E3FB123F5216D005524DE /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F83E3FB023F5216D005524DE /* MainViewController.storyboard */; };
 		F83E3FB423F523CB005524DE /* NotesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F83E3FB223F523CB005524DE /* NotesDataModel.xcdatamodeld */; };
@@ -28,7 +29,7 @@
 		F849ED8D2407B490002D7351 /* StartQuizViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F849ED8C2407B490002D7351 /* StartQuizViewController.storyboard */; };
 		F849ED912407B783002D7351 /* StartQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849ED902407B783002D7351 /* StartQuizViewController.swift */; };
 		F849ED942407CFEB002D7351 /* QuizQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F849ED932407CFEB002D7351 /* QuizQuestionCell.xib */; };
-		F849ED962407D594002D7351 /* QuizQuestionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849ED952407D594002D7351 /* QuizQuestionViewCell.swift */; };
+		F849ED962407D594002D7351 /* QuizQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849ED952407D594002D7351 /* QuizQuestionCell.swift */; };
 		F849ED992407D941002D7351 /* ConductQuizViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F849ED982407D941002D7351 /* ConductQuizViewController.storyboard */; };
 		F849ED9B2407DB9E002D7351 /* ConductQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849ED9A2407DB9E002D7351 /* ConductQuizViewController.swift */; };
 		F84C199D2403A35F00F90AFD /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84C199C2403A35F00F90AFD /* LoginPageViewController.swift */; };
@@ -50,6 +51,7 @@
 		F8371B4723E9C7D300A1FE37 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		F8371B4B23E9C8B400A1FE37 /* WritingBoardViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WritingBoardViewController.storyboard; sourceTree = "<group>"; };
 		F8371B4D23E9C98300A1FE37 /* WritingBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingBoardViewController.swift; sourceTree = "<group>"; };
+		F8380DFF240A11EC0003A82C /* QuizQuestions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = QuizQuestions.plist; sourceTree = "<group>"; };
 		F8388023240151F300077F9E /* LoginPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPageViewController.storyboard; sourceTree = "<group>"; };
 		F83B195A23FD442100227B40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F83E3FB023F5216D005524DE /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
@@ -64,7 +66,7 @@
 		F849ED8C2407B490002D7351 /* StartQuizViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartQuizViewController.storyboard; sourceTree = "<group>"; };
 		F849ED902407B783002D7351 /* StartQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartQuizViewController.swift; sourceTree = "<group>"; };
 		F849ED932407CFEB002D7351 /* QuizQuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizQuestionCell.xib; sourceTree = "<group>"; };
-		F849ED952407D594002D7351 /* QuizQuestionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionViewCell.swift; sourceTree = "<group>"; };
+		F849ED952407D594002D7351 /* QuizQuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionCell.swift; sourceTree = "<group>"; };
 		F849ED982407D941002D7351 /* ConductQuizViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConductQuizViewController.storyboard; sourceTree = "<group>"; };
 		F849ED9A2407DB9E002D7351 /* ConductQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConductQuizViewController.swift; sourceTree = "<group>"; };
 		F84C199C2403A35F00F90AFD /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				F844978923F404990004C8A2 /* NotesApp3-Bridging-Header.h */,
 				F844978B23F4049A0004C8A2 /* UIScrollView+EmptyDataSet.h */,
 				F844978A23F4049A0004C8A2 /* UIScrollView+EmptyDataSet.m */,
+				F8380DFF240A11EC0003A82C /* QuizQuestions.plist */,
 			);
 			path = NotesApp3;
 			sourceTree = "<group>";
@@ -217,7 +220,7 @@
 		F849ED922407CE99002D7351 /* CustomQuizCell */ = {
 			isa = PBXGroup;
 			children = (
-				F849ED952407D594002D7351 /* QuizQuestionViewCell.swift */,
+				F849ED952407D594002D7351 /* QuizQuestionCell.swift */,
 				F849ED932407CFEB002D7351 /* QuizQuestionCell.xib */,
 			);
 			path = CustomQuizCell;
@@ -310,6 +313,7 @@
 				F8371B3B23E9C67300A1FE37 /* Assets.xcassets in Resources */,
 				F8388024240151F300077F9E /* LoginPageViewController.storyboard in Resources */,
 				F849ED992407D941002D7351 /* ConductQuizViewController.storyboard in Resources */,
+				F8380E00240A11EC0003A82C /* QuizQuestions.plist in Resources */,
 				F849ED942407CFEB002D7351 /* QuizQuestionCell.xib in Resources */,
 				F849ED8D2407B490002D7351 /* StartQuizViewController.storyboard in Resources */,
 			);
@@ -396,7 +400,7 @@
 				F84C199D2403A35F00F90AFD /* LoginPageViewController.swift in Sources */,
 				F844978C23F4049A0004C8A2 /* UIScrollView+EmptyDataSet.m in Sources */,
 				F83E3FB423F523CB005524DE /* NotesDataModel.xcdatamodeld in Sources */,
-				F849ED962407D594002D7351 /* QuizQuestionViewCell.swift in Sources */,
+				F849ED962407D594002D7351 /* QuizQuestionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuizQuestionViewCell: UITableViewCell {
+class QuizQuestionCell: UITableViewCell {
 
     @IBOutlet weak var questionNumberLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!

@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Conduct Quiz View Controller-->
+        <!--ConductQuizViewController-->
         <scene sceneID="mzl-XN-ZBO">
             <objects>
-                <viewController id="khg-CC-0bf" customClass="ConductQuizViewController" customModule="NotesApp3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ConductQuizViewController" id="khg-CC-0bf" customClass="ConductQuizViewController" customModule="NotesApp3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2bG-pz-mRu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,12 +21,12 @@
                                     <navigationItem title="Quiz Time!" id="Opb-ua-JU9">
                                         <barButtonItem key="leftBarButtonItem" title="Exit" id="v3g-yi-aVy">
                                             <connections>
-                                                <action selector="exitButton:" destination="khg-CC-0bf" id="cdQ-47-fKM"/>
+                                                <action selector="exitButton:" destination="khg-CC-0bf" id="iBb-ky-QgM"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Submit" id="mYS-mo-k43">
                                             <connections>
-                                                <action selector="submitButton:" destination="khg-CC-0bf" id="wz7-dF-WuH"/>
+                                                <action selector="submitButton:" destination="khg-CC-0bf" id="ObJ-1U-hb8"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

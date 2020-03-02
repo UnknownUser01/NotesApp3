@@ -183,7 +183,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="SnI-oi-045"/>
                                 </constraints>
-                                <state key="normal" title="Cancel">
+                                <state key="normal" title="Reset">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <variation key="heightClass=compact-widthClass=compact">
@@ -479,6 +479,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="containerBtmConstrain" destination="48M-8i-4zZ" id="lS1-KW-PKx"/>
                         <outlet property="passwordErrorLabel" destination="pDf-Us-Km7" id="zBc-By-ekK"/>
                         <outlet property="passwordTextField" destination="qAB-OA-6XY" id="Ifb-Yu-7DT"/>
                         <outlet property="usernameErrorLabel" destination="oj5-2W-e25" id="Ylc-EP-xiI"/>

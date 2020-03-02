@@ -29,6 +29,8 @@ class StartQuizViewController: UIViewController {
         setLabelVisibility()
     }
     @IBAction func takeQuizButton(_ sender: Any) {
+        let viewController = UIViewController.conductQuizView
+        self.present(viewController, animated: true, completion: nil)
     }
 }
 

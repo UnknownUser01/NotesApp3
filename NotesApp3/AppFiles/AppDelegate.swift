@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        preloadData()
         return true
     }
 
@@ -30,6 +31,83 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    private func preloadData() {
+        var context: NSManagedObjectContext!
+        let preloadedDataKey = "didPreloadData"
+        let userDefaults = UserDefaults.standard
+        if userDefaults.bool(forKey: preloadedDataKey) == false {
+            guard let url = Bundle.main.url(forResource: "QuizQuestions", withExtension: "plist") else {
+                return
+            }
+            let backgroundContext = persistentContainer.newBackgroundContext()
+            persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
+            backgroundContext.perform {
+                if let contentArray = NSArray(contentsOf: url) as? [String] {
+                    var i = 0
+                    do {
+                        for item in contentArray {
+                            print(item)
+                            let questionsObject = Questions(context: backgroundContext)
+                            var remainder: Int
+                            if i == 0 {
+                                remainder = 0
+                            } else {
+                                remainder = i % 7
+                            }
+                            self.addToDb(value: remainder, data: item, questionObj: questionsObject)
+                            i += 1
+                        }
+                        
+                        while i <= 209 {
+                            let entity = NSEntityDescription.insertNewObject(forEntityName: Strings.entityQuestions, into: context)
+                            entity.setValue(contentArray[i], forKey: Strings.attributeSiNum)
+                            
+                            do {
+                                try context.save()
+                                print(Strings.createDataSucess)
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                        }
+                        
+                        try backgroundContext.save()
+                        userDefaults.set(true, forKey: preloadedDataKey)
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
+    }
+    
+    func addToDb(value: Int, data: String, questionObj: Questions) {
+        switch value {
+        case 0:
+            questionObj.siNum = data
+            break
+        case 1:
+            questionObj.question = data
+            break
+        case 2:
+            questionObj.option1 = data
+            break
+        case 3:
+            questionObj.option2 = data
+            break
+        case 4:
+            questionObj.option3 = data
+            break
+        case 5:
+            questionObj.option4 = data
+            break
+        case 6:
+            questionObj.correctOption = data
+            break
+        default:
+            print("Invalid Data")
+        }
     }
 
     // MARK: - Core Data stack

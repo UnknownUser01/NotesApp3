@@ -4,7 +4,17 @@
         <attribute name="notes" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Questions" representedClassName="Questions" syncable="YES" codeGenerationType="class">
+        <attribute name="correctOption" optional="YES" attributeType="String"/>
+        <attribute name="option1" optional="YES" attributeType="String"/>
+        <attribute name="option2" optional="YES" attributeType="String"/>
+        <attribute name="option3" optional="YES" attributeType="String"/>
+        <attribute name="option4" optional="YES" attributeType="String"/>
+        <attribute name="question" optional="YES" attributeType="String"/>
+        <attribute name="siNum" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="Notes" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Questions" positionX="-63" positionY="0" width="128" height="148"/>
     </elements>
 </model>

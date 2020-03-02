@@ -55,24 +55,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            self.deleteIndex = indexPath.row
-            let alert = UIAlertController(title: Strings.alert, message: Strings.areYouSure, preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: Strings.delete, style: .default, handler: { _ in
-                self.titles = self.arrayOfNotesData[indexPath.row].titleData
-                self.note = self.arrayOfNotesData[indexPath.row].notesData
-                self.deleteData(title: self.titles, notes: self.note)
-                self.arrayOfNotesData.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .fade)
-                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-                AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) { }
-            }))
-            alert.addAction(UIAlertAction(title: Strings.cancel, style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         if let cell = Bundle.main.loadNibNamed(Strings.tableViewCell, owner: self, options: nil)?.first as? TableViewCell {
@@ -93,6 +75,24 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         goToNextView()
         func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.deleteIndex = indexPath.row
+            let alert = UIAlertController(title: Strings.alert, message: Strings.areYouSure, preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: Strings.delete, style: .default, handler: { _ in
+                self.titles = self.arrayOfNotesData[indexPath.row].titleData
+                self.note = self.arrayOfNotesData[indexPath.row].notesData
+                self.deleteData(title: self.titles, notes: self.note)
+                self.arrayOfNotesData.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) { }
+            }))
+            alert.addAction(UIAlertAction(title: Strings.cancel, style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
