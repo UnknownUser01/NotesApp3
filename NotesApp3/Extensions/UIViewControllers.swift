@@ -54,7 +54,7 @@ extension UIViewController {
 private var xoAssociationKeyForBottomConstrainInVC: UInt8 = 0
 
 extension UIViewController {
-
+    
     var containerDependOnKeyboardBottomConstrain: NSLayoutConstraint! {
         get {
             return objc_getAssociatedObject(self, &xoAssociationKeyForBottomConstrainInVC) as? NSLayoutConstraint
@@ -63,13 +63,14 @@ extension UIViewController {
             objc_setAssociatedObject(self, &xoAssociationKeyForBottomConstrainInVC, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
         }
     }
-
+    
     func watchForKeyboard() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
-    @objc func keyboardWasShown(notification: NSNotification) {
+    
+    @objc
+    func keyboardWasShown(notification: NSNotification) {
         var keyboardFrames: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100)
         if let info = notification.userInfo {
             guard let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
@@ -77,14 +78,15 @@ extension UIViewController {
             }
             keyboardFrames = keyboardFrame
         }
-
+        
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
             self.containerDependOnKeyboardBottomConstrain.constant = keyboardFrames.height
             self.view.layoutIfNeeded()
         })
     }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
+    
+    @objc
+    func keyboardWillHide(notification: NSNotification) {
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
             self.containerDependOnKeyboardBottomConstrain.constant = 0
             self.view.layoutIfNeeded()

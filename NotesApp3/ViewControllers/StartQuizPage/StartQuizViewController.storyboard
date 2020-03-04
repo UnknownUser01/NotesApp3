@@ -16,13 +16,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZr-y7-G1t">
-                                <rect key="frame" x="0.0" y="44" width="414" height="294"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="286"/>
                                 <items>
                                     <navigationItem title="Quiz Time!" id="I8G-r9-7fS"/>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1j-l0-5WT">
-                                <rect key="frame" x="121" y="631" width="172" height="40"/>
+                                <rect key="frame" x="121" y="623" width="172" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1Yj-F5-n54"/>
                                     <constraint firstAttribute="height" constant="40" id="6K4-l5-rcH"/>
@@ -51,7 +51,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDj-7v-G7D">
-                                <rect key="frame" x="105" y="406" width="204" height="50"/>
+                                <rect key="frame" x="105" y="398" width="204" height="50"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5xy-aM-QxJ"/>
@@ -89,7 +89,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ln-OY-HlV">
-                                <rect key="frame" x="121" y="536" width="172" height="50"/>
+                                <rect key="frame" x="121" y="528" width="172" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9T4-aE-KJ1"/>
                                     <constraint firstAttribute="height" constant="50" id="N5e-AW-fyt"/>
@@ -118,11 +118,11 @@
                                 </variation>
                             </label>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktF-e6-IfE">
-                                <rect key="frame" x="0.0" y="790" width="414" height="72"/>
+                                <rect key="frame" x="0.0" y="816" width="414" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="m6K-nZ-Qpz"/>
-                                    <constraint firstAttribute="height" constant="72" id="toB-Et-WUn"/>
+                                    <constraint firstAttribute="height" constant="80" id="toB-Et-WUn"/>
                                 </constraints>
                                 <items>
                                     <tabBarItem title="Notes" image="square.and.pencil" catalog="system" id="HaI-73-hql"/>
@@ -143,7 +143,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="ktF-e6-IfE" firstAttribute="bottom" secondItem="0Xx-2I-YQ1" secondAttribute="bottom" id="0w3-DH-MF2"/>
+                            <constraint firstItem="ktF-e6-IfE" firstAttribute="bottom" secondItem="0Xx-2I-YQ1" secondAttribute="bottom" id="0w3-DH-MF2">
+                                <variation key="heightClass=regular-widthClass=compact" constant="34"/>
+                            </constraint>
                             <constraint firstItem="0Xx-2I-YQ1" firstAttribute="trailing" secondItem="G1j-l0-5WT" secondAttribute="trailing" constant="318" id="1iM-h0-VdJ"/>
                             <constraint firstItem="0Xx-2I-YQ1" firstAttribute="trailing" secondItem="NDj-7v-G7D" secondAttribute="trailing" constant="219" id="21e-N8-qYw"/>
                             <constraint firstItem="NDj-7v-G7D" firstAttribute="top" secondItem="WZr-y7-G1t" secondAttribute="bottom" constant="136" id="2kx-1s-Lnx"/>
@@ -157,6 +159,7 @@
                             <constraint firstItem="G1j-l0-5WT" firstAttribute="leading" secondItem="0Xx-2I-YQ1" secondAttribute="leading" constant="354" id="Cuy-i4-GGV"/>
                             <constraint firstItem="0Xx-2I-YQ1" firstAttribute="trailing" secondItem="G1j-l0-5WT" secondAttribute="trailing" constant="234" id="Dcq-Yu-0Ep"/>
                             <constraint firstItem="NDj-7v-G7D" firstAttribute="top" secondItem="0Xx-2I-YQ1" secondAttribute="top" constant="120" id="DeM-Zg-1aq"/>
+                            <constraint firstAttribute="bottom" secondItem="ktF-e6-IfE" secondAttribute="bottom" symbolic="YES" id="Dsq-XC-gpM"/>
                             <constraint firstAttribute="trailing" secondItem="WZr-y7-G1t" secondAttribute="trailing" symbolic="YES" id="Fr1-Ve-9bc"/>
                             <constraint firstItem="0Xx-2I-YQ1" firstAttribute="trailing" secondItem="1Ln-OY-HlV" secondAttribute="trailing" constant="138" id="GF0-eJ-OiJ"/>
                             <constraint firstItem="NDj-7v-G7D" firstAttribute="leading" secondItem="0Xx-2I-YQ1" secondAttribute="leading" constant="219" id="GGT-HQ-mk1"/>
@@ -169,7 +172,9 @@
                             <constraint firstItem="NDj-7v-G7D" firstAttribute="top" secondItem="WZr-y7-G1t" secondAttribute="bottom" constant="68" id="LKh-fS-xYV"/>
                             <constraint firstItem="NDj-7v-G7D" firstAttribute="top" secondItem="WZr-y7-G1t" secondAttribute="bottom" constant="40" id="LOR-6t-dGP"/>
                             <constraint firstItem="1Ln-OY-HlV" firstAttribute="top" secondItem="NDj-7v-G7D" secondAttribute="bottom" constant="80" id="NgG-yA-NPc"/>
-                            <constraint firstItem="ktF-e6-IfE" firstAttribute="top" secondItem="G1j-l0-5WT" secondAttribute="bottom" constant="119" id="NsS-fX-IPu"/>
+                            <constraint firstItem="ktF-e6-IfE" firstAttribute="top" secondItem="G1j-l0-5WT" secondAttribute="bottom" constant="119" id="NsS-fX-IPu">
+                                <variation key="heightClass=regular-widthClass=compact" constant="153"/>
+                            </constraint>
                             <constraint firstItem="1Ln-OY-HlV" firstAttribute="top" secondItem="NDj-7v-G7D" secondAttribute="bottom" constant="24" id="OfA-Ez-dAm"/>
                             <constraint firstItem="1Ln-OY-HlV" firstAttribute="top" secondItem="NDj-7v-G7D" secondAttribute="bottom" constant="48" id="Pb5-Xz-DlT"/>
                             <constraint firstItem="ktF-e6-IfE" firstAttribute="bottom" secondItem="0Xx-2I-YQ1" secondAttribute="bottom" id="PeB-z9-fH9"/>
@@ -276,6 +281,7 @@
                                 <exclude reference="0w3-DH-MF2"/>
                                 <exclude reference="6Hg-eS-b77"/>
                                 <exclude reference="91B-Ft-vAB"/>
+                                <exclude reference="Dsq-XC-gpM"/>
                                 <exclude reference="JTo-ln-ptj"/>
                                 <exclude reference="NsS-fX-IPu"/>
                                 <exclude reference="PeB-z9-fH9"/>
@@ -389,9 +395,10 @@
                                 <include reference="oI8-MF-lK8"/>
                                 <include reference="VVv-GO-9n7"/>
                                 <exclude reference="zWl-9J-5fi"/>
-                                <include reference="0w3-DH-MF2"/>
+                                <exclude reference="0w3-DH-MF2"/>
                                 <exclude reference="6Hg-eS-b77"/>
                                 <exclude reference="91B-Ft-vAB"/>
+                                <include reference="Dsq-XC-gpM"/>
                                 <exclude reference="JTo-ln-ptj"/>
                                 <include reference="NsS-fX-IPu"/>
                                 <exclude reference="TNM-EG-NbZ"/>

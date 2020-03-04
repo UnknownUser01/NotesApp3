@@ -10,6 +10,6 @@ import Foundation
 
 extension UIColor {
     
-    static let darkBlue = UIColor(red: 43 / 255.0, green: 79 / 255.0, blue: 133 / 255.0, alpha: 1.0)
-    
+    static let darkBlue = #colorLiteral(red: 0.168627451, green: 0.3098039216, blue: 0.5215686275, alpha: 1)
+
 }
