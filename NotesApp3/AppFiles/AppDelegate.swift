@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func preloadData() {
-        var context: NSManagedObjectContext!
+//        var context: NSManagedObjectContext!
         let preloadedDataKey = "didPreloadData"
         let userDefaults = UserDefaults.standard
         if userDefaults.bool(forKey: preloadedDataKey) == false {
@@ -60,17 +60,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             i += 1
                         }
                         
-                        while i <= 209 {
-                            let entity = NSEntityDescription.insertNewObject(forEntityName: Strings.entityQuestions, into: context)
-                            entity.setValue(contentArray[i], forKey: Strings.attributeSiNum)
-                            
-                            do {
-                                try context.save()
-                                print(Strings.createDataSucess)
-                            } catch {
-                                print(error.localizedDescription)
-                            }
-                        }
+//                        while i <= 209 {
+//                            let entity = NSEntityDescription.insertNewObject(forEntityName: Strings.entityQuestions, into: context)
+//                            entity.setValue(contentArray[i], forKey: Strings.attributeSiNum)
+//
+//                            do {
+//                                try context.save()
+//                                print(Strings.createDataSucess)
+//                            } catch {
+//                                print(error.localizedDescription)
+//                            }
+//                        }
                         
                         try backgroundContext.save()
                         userDefaults.set(true, forKey: preloadedDataKey)
@@ -86,25 +86,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         switch value {
         case 0:
             questionObj.siNum = data
-            break
         case 1:
             questionObj.question = data
-            break
         case 2:
             questionObj.option1 = data
-            break
         case 3:
             questionObj.option2 = data
-            break
         case 4:
             questionObj.option3 = data
-            break
         case 5:
             questionObj.option4 = data
-            break
         case 6:
             questionObj.correctOption = data
-            break
         default:
             print("Invalid Data")
         }

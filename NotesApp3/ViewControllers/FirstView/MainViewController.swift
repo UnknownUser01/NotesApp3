@@ -38,11 +38,20 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarStyle()
-        setStatusBarStyle()
+        setStatusBarStyle(isLandscape: false)
         setDefaultTableSettings()
         setContextVariable()
         readData()
         setDefaultTabBar()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+            showStatusBar(isLandscape: true)
+        } else if UIDevice.current.orientation.isPortrait {
+            showStatusBar(isLandscape: false)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -119,7 +128,7 @@ extension MainViewController {
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
-    func setStatusBarStyle() {
+    func setStatusBarStyle(isLandscape: Bool) {
         if #available(iOS 13.0, *) {
             let windowKey = UIApplication.shared.connectedScenes
                 .filter({ $0.activationState == .foregroundActive })
@@ -128,9 +137,19 @@ extension MainViewController {
                 .first?.windows.first(where: { $0.isKeyWindow })
             if let frame = windowKey?.windowScene?.statusBarManager?.statusBarFrame {
                 let statusBar = UIView(frame: frame)
+                statusBar.tag = 100
                 statusBar.backgroundColor = UIColor.darkBlue
                 view.addSubview(statusBar)
             }
+        }
+    }
+    
+    func showStatusBar(isLandscape: Bool) {
+        let statusBar = self.view.viewWithTag(100)
+        if isLandscape {
+            statusBar?.isHidden = isLandscape
+        } else {
+            statusBar?.isHidden = isLandscape
         }
     }
     

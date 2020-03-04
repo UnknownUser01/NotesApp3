@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N0w-tz-uFn">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" title="MainViewController" id="N0w-tz-uFn" customClass="MainViewController" customModule="NotesApp3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ESS-a1-0VO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D63-08-9J2">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Notes" id="SGx-Gb-SnP">
                                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="IQh-Xi-bGd">
@@ -33,11 +33,11 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="l3s-B9-oEw">
-                                <rect key="frame" x="0.0" y="88" width="414" height="728"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="620"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="80" id="OgZ-QW-Ihw">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OgZ-QW-Ihw" id="62I-yt-6VQ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -47,10 +47,10 @@
                                 </prototypes>
                             </tableView>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkF-X6-YXI">
-                                <rect key="frame" x="0.0" y="816" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="664" width="414" height="72"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="HHO-Iw-iay"/>
+                                    <constraint firstAttribute="height" constant="72" id="HHO-Iw-iay"/>
                                 </constraints>
                                 <items>
                                     <tabBarItem title="Notes" image="square.and.pencil" catalog="system" id="ejy-qT-ayM"/>
@@ -60,19 +60,63 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="bkF-X6-YXI" secondAttribute="trailing" symbolic="YES" id="0ss-3C-cdr"/>
                             <constraint firstItem="l3s-B9-oEw" firstAttribute="trailing" secondItem="NRV-2C-28V" secondAttribute="trailing" id="3DZ-y0-g0E"/>
+                            <constraint firstItem="bkF-X6-YXI" firstAttribute="leading" secondItem="ESS-a1-0VO" secondAttribute="leading" symbolic="YES" id="4Hn-Kd-K8C"/>
                             <constraint firstItem="l3s-B9-oEw" firstAttribute="leading" secondItem="NRV-2C-28V" secondAttribute="leading" id="4ok-wE-t1k"/>
+                            <constraint firstAttribute="trailing" secondItem="D63-08-9J2" secondAttribute="trailing" symbolic="YES" id="6dp-1C-br7"/>
+                            <constraint firstItem="D63-08-9J2" firstAttribute="leading" secondItem="ESS-a1-0VO" secondAttribute="leading" symbolic="YES" id="89m-7P-cYw"/>
                             <constraint firstItem="D63-08-9J2" firstAttribute="top" secondItem="NRV-2C-28V" secondAttribute="top" id="Ak0-Eu-ft0"/>
                             <constraint firstItem="bkF-X6-YXI" firstAttribute="trailing" secondItem="NRV-2C-28V" secondAttribute="trailing" id="Ayh-YD-PH8"/>
                             <constraint firstItem="bkF-X6-YXI" firstAttribute="top" secondItem="l3s-B9-oEw" secondAttribute="bottom" symbolic="YES" id="EHT-LN-3F7"/>
                             <constraint firstItem="D63-08-9J2" firstAttribute="leading" secondItem="NRV-2C-28V" secondAttribute="leading" id="RcN-f8-cLq"/>
                             <constraint firstAttribute="bottom" secondItem="bkF-X6-YXI" secondAttribute="bottom" symbolic="YES" id="UMx-40-haa"/>
                             <constraint firstItem="l3s-B9-oEw" firstAttribute="top" secondItem="D63-08-9J2" secondAttribute="bottom" symbolic="YES" id="WdH-pv-N5u"/>
+                            <constraint firstItem="D63-08-9J2" firstAttribute="leading" secondItem="ESS-a1-0VO" secondAttribute="leading" symbolic="YES" id="bzs-YZ-YnY"/>
                             <constraint firstItem="bkF-X6-YXI" firstAttribute="leading" secondItem="NRV-2C-28V" secondAttribute="leading" id="dwa-Ky-jhq"/>
+                            <constraint firstAttribute="trailing" secondItem="bkF-X6-YXI" secondAttribute="trailing" symbolic="YES" id="hdX-bt-6qN"/>
                             <constraint firstItem="bkF-X6-YXI" firstAttribute="top" secondItem="l3s-B9-oEw" secondAttribute="bottom" symbolic="YES" id="hyQ-pV-yJL"/>
+                            <constraint firstItem="bkF-X6-YXI" firstAttribute="leading" secondItem="ESS-a1-0VO" secondAttribute="leading" symbolic="YES" id="jbp-lb-A2X"/>
                             <constraint firstItem="D63-08-9J2" firstAttribute="trailing" secondItem="NRV-2C-28V" secondAttribute="trailing" id="nzF-Ap-jKP"/>
+                            <constraint firstAttribute="trailing" secondItem="D63-08-9J2" secondAttribute="trailing" symbolic="YES" id="oej-Gw-zau"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NRV-2C-28V"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6dp-1C-br7"/>
+                                <exclude reference="89m-7P-cYw"/>
+                                <exclude reference="bzs-YZ-YnY"/>
+                                <exclude reference="oej-Gw-zau"/>
+                                <exclude reference="0ss-3C-cdr"/>
+                                <exclude reference="4Hn-Kd-K8C"/>
+                                <exclude reference="hdX-bt-6qN"/>
+                                <exclude reference="jbp-lb-A2X"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="RcN-f8-cLq"/>
+                                <include reference="bzs-YZ-YnY"/>
+                                <exclude reference="nzF-Ap-jKP"/>
+                                <include reference="oej-Gw-zau"/>
+                                <include reference="0ss-3C-cdr"/>
+                                <include reference="4Hn-Kd-K8C"/>
+                                <exclude reference="Ayh-YD-PH8"/>
+                                <exclude reference="dwa-Ky-jhq"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="6dp-1C-br7"/>
+                                <include reference="89m-7P-cYw"/>
+                                <exclude reference="RcN-f8-cLq"/>
+                                <exclude reference="nzF-Ap-jKP"/>
+                                <exclude reference="Ayh-YD-PH8"/>
+                                <exclude reference="dwa-Ky-jhq"/>
+                                <include reference="hdX-bt-6qN"/>
+                                <include reference="jbp-lb-A2X"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="mainTabBar" destination="bkF-X6-YXI" id="VYn-bB-T1y"/>
@@ -82,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fie-41-dXs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="66.666666666666671" y="113.83928571428571"/>
+            <point key="canvasLocation" x="65.763546798029566" y="112.8"/>
         </scene>
     </scenes>
     <resources>

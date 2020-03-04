@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginPageViewController: UIViewController {
+class LoginPageViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -22,10 +22,20 @@ class LoginPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.passwordTextField.delegate = self
+        self.usernameTextField.delegate = self
         self.containerDependOnKeyboardBottomConstrain = containerBtmConstrain
         self.watchForKeyboard()
         listOfErrorLabels = [usernameErrorLabel, passwordErrorLabel]
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        if textField == passwordTextField {
+            self.loginButton(true)
+        }
+        return false
     }
     
     @IBAction func loginButton(_ sender: Any) {
@@ -91,8 +101,6 @@ extension LoginPageViewController {
     }
 }
 
-
-
 //extension LoginPageViewController {
 //
 //    func animateWithKeyboard(notification: NSNotification) {
@@ -142,4 +150,3 @@ extension LoginPageViewController {
 //                completion: nil)
 //        }
 //    }
-

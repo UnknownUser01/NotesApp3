@@ -24,6 +24,24 @@ class WritingBoardViewController: UIViewController {
         showNotes(titleString: titleValue, notesString: notesValue)
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+            showStatusBar(isLandscape: true)
+        } else if UIDevice.current.orientation.isPortrait {
+            showStatusBar(isLandscape: false)
+        }
+    }
+    
+    func showStatusBar(isLandscape: Bool) {
+        let statusBar = self.view.viewWithTag(100)
+        if isLandscape {
+            statusBar?.isHidden = isLandscape
+        } else {
+            statusBar?.isHidden = isLandscape
+        }
+    }
+    
     @IBAction func cancelButton(_ sender: Any) {
         titleTextField.text = ""
         notesTextView.text = ""
@@ -98,6 +116,7 @@ extension WritingBoardViewController {
                 .first?.windows.first(where: { $0.isKeyWindow })
             if let frame = windowKey?.windowScene?.statusBarManager?.statusBarFrame {
                 let statusBar = UIView(frame: frame)
+                statusBar.tag = 100
                 statusBar.backgroundColor = UIColor.darkBlue
                 view.addSubview(statusBar)
             }

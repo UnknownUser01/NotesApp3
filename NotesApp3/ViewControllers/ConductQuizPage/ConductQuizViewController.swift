@@ -83,10 +83,8 @@ extension ConductQuizViewController {
     
     func extractQuestions(questionNumber: String) {
         let question = "Question " + questionNumber
-        for _ in 0...30 {
-            if question == questionObject.siNum{
-                
-            }
+        for _ in 0...30 where question == questionObject.siNum {
+            
         }
     }
     
